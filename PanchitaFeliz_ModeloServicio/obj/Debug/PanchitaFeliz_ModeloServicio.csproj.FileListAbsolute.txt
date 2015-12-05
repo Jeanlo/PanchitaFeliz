@@ -1,0 +1,11 @@
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PanchitaFeliz_ModeloServicio\bin\Debug\PanchitaFeliz_ModeloServicio.dll.config
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PanchitaFeliz_ModeloServicio\bin\Debug\PanchitaFeliz_ModeloServicio.dll
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PanchitaFeliz_ModeloServicio\bin\Debug\PanchitaFeliz_ModeloServicio.pdb
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PanchitaFeliz_ModeloServicio\obj\Debug\PanchitaFeliz_ModeloServicio.dll
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PanchitaFeliz_ModeloServicio\obj\Debug\PanchitaFeliz_ModeloServicio.pdb
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PanchitaFeliz_ModeloServicio\bin\Debug\PanchitaFeliz_ModeloServicio.dll.config
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PanchitaFeliz_ModeloServicio\bin\Debug\PanchitaFeliz_ModeloServicio.dll
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PanchitaFeliz_ModeloServicio\bin\Debug\PanchitaFeliz_ModeloServicio.pdb
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PanchitaFeliz_ModeloServicio\obj\Debug\PanchitaFeliz_ModeloServicio.dll
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PanchitaFeliz_ModeloServicio\obj\Debug\PanchitaFeliz_ModeloServicio.pdb
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PanchitaFeliz_ModeloServicio\obj\Debug\PanchitaFeliz_ModeloServicio.csprojResolveAssemblyReference.cache

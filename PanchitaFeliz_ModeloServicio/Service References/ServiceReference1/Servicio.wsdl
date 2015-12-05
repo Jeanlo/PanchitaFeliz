@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Servicio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2310/Servicio.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2310/Servicio.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2310/Servicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PruebaModelo" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicio_ObtenerPersonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPersonas" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerPersonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPersonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerFacturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFacturas" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerFacturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFacturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerOrdenes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenes" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerOrdenes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerIngredientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIngredientes" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerIngredientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIngredientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerPlatos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPlatos" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerPlatos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPlatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerEmpleados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerEmpleados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerClientes" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerAcompanantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAcompanantes" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerAcompanantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAcompanantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerObjetosDelInventario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerObjetosDelInventario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerObjetosDelInventario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerObjetosDelInventarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerMesas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMesas" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerMesas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMesasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerSexos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSexos" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerSexos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSexosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerUnidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUnidades" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerUnidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUnidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerCargos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCargos" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerCargos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCargosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerEstados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstados" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerEstados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerTiposPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposPago" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ObtenerTiposPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarObjetosRecibidos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarObjetosRecibidos" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarObjetosRecibidos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarObjetosRecibidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoPlato_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoPlato" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoPlato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoPlatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevaMesa_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevaMesa" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevaMesa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevaMesaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoSexo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoSexo" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoSexo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoSexoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoCargo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoCargo" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoCargo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoCargoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoEstado" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevaUnidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevaUnidad" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevaUnidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevaUnidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoTipoPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoTipoPago" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoTipoPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoTipoPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevoEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevoEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevaOrden_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevaOrden" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_GuardarNuevaOrden_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarNuevaOrdenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicio">
+    <wsdl:operation name="ObtenerPersonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerPersonas" message="tns:IServicio_ObtenerPersonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerPersonasResponse" message="tns:IServicio_ObtenerPersonas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFacturas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerFacturas" message="tns:IServicio_ObtenerFacturas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerFacturasResponse" message="tns:IServicio_ObtenerFacturas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrdenes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerOrdenes" message="tns:IServicio_ObtenerOrdenes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerOrdenesResponse" message="tns:IServicio_ObtenerOrdenes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIngredientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerIngredientes" message="tns:IServicio_ObtenerIngredientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerIngredientesResponse" message="tns:IServicio_ObtenerIngredientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlatos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerPlatos" message="tns:IServicio_ObtenerPlatos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerPlatosResponse" message="tns:IServicio_ObtenerPlatos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEmpleados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerEmpleados" message="tns:IServicio_ObtenerEmpleados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerEmpleadosResponse" message="tns:IServicio_ObtenerEmpleados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerClientes" message="tns:IServicio_ObtenerClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerClientesResponse" message="tns:IServicio_ObtenerClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAcompanantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerAcompanantes" message="tns:IServicio_ObtenerAcompanantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerAcompanantesResponse" message="tns:IServicio_ObtenerAcompanantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerObjetosDelInventario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerObjetosDelInventario" message="tns:IServicio_ObtenerObjetosDelInventario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerObjetosDelInventarioResponse" message="tns:IServicio_ObtenerObjetosDelInventario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMesas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerMesas" message="tns:IServicio_ObtenerMesas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerMesasResponse" message="tns:IServicio_ObtenerMesas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSexos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerSexos" message="tns:IServicio_ObtenerSexos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerSexosResponse" message="tns:IServicio_ObtenerSexos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUnidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerUnidades" message="tns:IServicio_ObtenerUnidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerUnidadesResponse" message="tns:IServicio_ObtenerUnidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCargos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerCargos" message="tns:IServicio_ObtenerCargos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerCargosResponse" message="tns:IServicio_ObtenerCargos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerEstados" message="tns:IServicio_ObtenerEstados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerEstadosResponse" message="tns:IServicio_ObtenerEstados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ObtenerTiposPago" message="tns:IServicio_ObtenerTiposPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ObtenerTiposPagoResponse" message="tns:IServicio_ObtenerTiposPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarObjetosRecibidos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarObjetosRecibidos" message="tns:IServicio_GuardarObjetosRecibidos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarObjetosRecibidosResponse" message="tns:IServicio_GuardarObjetosRecibidos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoPlato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoPlato" message="tns:IServicio_GuardarNuevoPlato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoPlatoResponse" message="tns:IServicio_GuardarNuevoPlato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevaMesa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevaMesa" message="tns:IServicio_GuardarNuevaMesa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevaMesaResponse" message="tns:IServicio_GuardarNuevaMesa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoSexo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoSexo" message="tns:IServicio_GuardarNuevoSexo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoSexoResponse" message="tns:IServicio_GuardarNuevoSexo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoCargo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoCargo" message="tns:IServicio_GuardarNuevoCargo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoCargoResponse" message="tns:IServicio_GuardarNuevoCargo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoEstado" message="tns:IServicio_GuardarNuevoEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoEstadoResponse" message="tns:IServicio_GuardarNuevoEstado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevaUnidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevaUnidad" message="tns:IServicio_GuardarNuevaUnidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevaUnidadResponse" message="tns:IServicio_GuardarNuevaUnidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoTipoPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoTipoPago" message="tns:IServicio_GuardarNuevoTipoPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoTipoPagoResponse" message="tns:IServicio_GuardarNuevoTipoPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoCliente" message="tns:IServicio_GuardarNuevoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoClienteResponse" message="tns:IServicio_GuardarNuevoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoEmpleado" message="tns:IServicio_GuardarNuevoEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevoEmpleadoResponse" message="tns:IServicio_GuardarNuevoEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevaOrden">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GuardarNuevaOrden" message="tns:IServicio_GuardarNuevaOrden_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GuardarNuevaOrdenResponse" message="tns:IServicio_GuardarNuevaOrden_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicio" type="tns:IServicio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerPersonas">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerPersonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFacturas">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerFacturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrdenes">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerOrdenes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIngredientes">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerIngredientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlatos">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerPlatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEmpleados">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerEmpleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAcompanantes">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerAcompanantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerObjetosDelInventario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerObjetosDelInventario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMesas">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerMesas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSexos">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerSexos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUnidades">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerUnidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCargos">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerCargos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstados">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerEstados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposPago">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ObtenerTiposPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarObjetosRecibidos">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarObjetosRecibidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoPlato">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevoPlato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevaMesa">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevaMesa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoSexo">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevoSexo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoCargo">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevoCargo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoEstado">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevoEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevaUnidad">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevaUnidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoTipoPago">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevoTipoPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevoEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevoEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarNuevaOrden">
+      <soap:operation soapAction="http://tempuri.org/IServicio/GuardarNuevaOrden" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicio">
+    <wsdl:port name="BasicHttpBinding_IServicio" binding="tns:BasicHttpBinding_IServicio">
+      <soap:address location="http://localhost:2310/Servicio.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

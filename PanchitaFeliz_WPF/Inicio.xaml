@@ -1,0 +1,36 @@
+﻿<Window x:Class="PanchitaFeliz_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PanchitaFeliz_WPF"
+        mc:Ignorable="d"
+        Title="Restaurante Panchita Feliz - Inicio" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="Ordenes">
+                <Grid>
+                    <StackPanel>
+                        <Label FontSize="18">ORDENES PENDIENTES</Label>
+                        <ListView ItemsSource="{Binding ListadoOrdenesPendientes}" SelectedItem="{Binding OrdenActual}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Platos">
+                <Grid>
+                    <StackPanel>
+                        <Label FontSize="18">PLATOS</Label>
+                    </StackPanel>                    
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

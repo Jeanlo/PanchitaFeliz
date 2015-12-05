@@ -1,0 +1,1950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACOMPANANTES">
+          <Key>
+            <PropertyRef Name="CODIGOACOMPANANTE" />
+          </Key>
+          <Property Name="CODIGOACOMPANANTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CARGOS">
+          <Key>
+            <PropertyRef Name="CODIGOCARGO" />
+          </Key>
+          <Property Name="CODIGOCARGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLIENTES_RESTAURANTE">
+          <Key>
+            <PropertyRef Name="CODIGOCLIENTE" />
+          </Key>
+          <Property Name="CODIGOCLIENTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DISTRIBUIDORACOMPANANTES">
+          <Key>
+            <PropertyRef Name="DISTRIBUIDOR" />
+            <PropertyRef Name="ACOMPANANTE" />
+          </Key>
+          <Property Name="DISTRIBUIDOR" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ACOMPANANTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DISTRIBUIDORES">
+          <Key>
+            <PropertyRef Name="CODIGODISTRIBUIDOR" />
+          </Key>
+          <Property Name="CODIGODISTRIBUIDOR" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="20" />
+          <Property Name="RNC" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DISTRIBUIDORESINGREDIENTES">
+          <Key>
+            <PropertyRef Name="DISTRIBUIDOR" />
+            <PropertyRef Name="INGREDIENTE" />
+          </Key>
+          <Property Name="DISTRIBUIDOR" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="INGREDIENTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EMPLEADOS">
+          <Key>
+            <PropertyRef Name="CODIGOEMPLEADO" />
+          </Key>
+          <Property Name="CODIGOEMPLEADO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SEXO" Type="number" Precision="38" Scale="0" />
+          <Property Name="CARGO" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="ESTADOORDENES">
+          <Key>
+            <PropertyRef Name="CODIGOESTADO" />
+          </Key>
+          <Property Name="CODIGOESTADO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FACTURAS">
+          <Key>
+            <PropertyRef Name="CODIGOFACTURA" />
+          </Key>
+          <Property Name="CODIGOFACTURA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ORDEN" Type="number" Precision="38" Scale="0" />
+          <Property Name="TIPOPAGO" Type="number" Precision="38" Scale="0" />
+          <Property Name="FECHA" Type="date" />
+          <Property Name="HORA" Type="number" Precision="38" Scale="0" />
+          <Property Name="MINUTO" Type="number" Precision="38" Scale="0" />
+          <Property Name="SEGUNDO" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="IMPUESTOS_RESTAURANTE">
+          <Key>
+            <PropertyRef Name="CODIGOIMPUESTO" />
+          </Key>
+          <Property Name="CODIGOIMPUESTO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TARIFA" Type="number" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityType Name="IMPUESTOSOBJETOS">
+          <Key>
+            <PropertyRef Name="IMPUESTO" />
+            <PropertyRef Name="OBJETO" />
+          </Key>
+          <Property Name="IMPUESTO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OBJETO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INGREDIENTES">
+          <Key>
+            <PropertyRef Name="CODIGOINGREDIENTE" />
+          </Key>
+          <Property Name="CODIGOINGREDIENTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="40" />
+          <Property Name="PRECIO" Type="number" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityType Name="INVENTARIOS">
+          <Key>
+            <PropertyRef Name="CODIGOINVENTARIO" />
+          </Key>
+          <Property Name="CODIGOINVENTARIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MENUACOMPANANTES">
+          <Key>
+            <PropertyRef Name="MENU" />
+            <PropertyRef Name="ACOMPANANTE" />
+          </Key>
+          <Property Name="MENU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ACOMPANANTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MENUS">
+          <Key>
+            <PropertyRef Name="CODIGOMENU" />
+          </Key>
+          <Property Name="CODIGOMENU" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MESAS">
+          <Key>
+            <PropertyRef Name="NUMEROMESAS" />
+          </Key>
+          <Property Name="NUMEROMESAS" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OBJETOS">
+          <Key>
+            <PropertyRef Name="CODIGOOBJETO" />
+          </Key>
+          <Property Name="CODIGOOBJETO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OBJETOSINVENTARIOS">
+          <Key>
+            <PropertyRef Name="OBJETO" />
+            <PropertyRef Name="INVENTARIO" />
+          </Key>
+          <Property Name="OBJETO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="INVENTARIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CANTIDAD" Type="number" Precision="38" Scale="0" />
+          <Property Name="UNIDADES" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="ORDENES">
+          <Key>
+            <PropertyRef Name="CODIGOORDEN" />
+          </Key>
+          <Property Name="CODIGOORDEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CLIENTE" Type="number" Precision="38" Scale="0" />
+          <Property Name="ESTADO" Type="number" Precision="38" Scale="0" />
+          <Property Name="COSTOTOTAL" Type="number" Precision="10" Scale="2" />
+          <Property Name="FECHA" Type="date" />
+          <Property Name="HORA" Type="number" Precision="38" Scale="0" />
+          <Property Name="MINUTO" Type="number" Precision="38" Scale="0" />
+          <Property Name="SEGUNDO" Type="number" Precision="38" Scale="0" />
+          <Property Name="SUBORDEN" Type="number" Precision="38" Scale="0" />
+          <Property Name="MESERO" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="ORDENESEMPLEADOPLATOS">
+          <Key>
+            <PropertyRef Name="ORDEN" />
+            <PropertyRef Name="EMPLEADO" />
+            <PropertyRef Name="PLATO" />
+          </Key>
+          <Property Name="ORDEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMPLEADO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PLATO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CARGO" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="ORDENESMESAS">
+          <Key>
+            <PropertyRef Name="ORDEN" />
+            <PropertyRef Name="MESA" />
+          </Key>
+          <Property Name="ORDEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MESA" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORDENESPLATOS">
+          <Key>
+            <PropertyRef Name="ORDEN" />
+            <PropertyRef Name="PLATO" />
+          </Key>
+          <Property Name="ORDEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PLATO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CANTIDAD" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="PERSONAS">
+          <Key>
+            <PropertyRef Name="CODIGOPERSONA" />
+          </Key>
+          <Property Name="CODIGOPERSONA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="40" />
+          <Property Name="APELLIDO" Type="varchar2" MaxLength="40" />
+          <Property Name="DOCUMENTOIDENTIDAD" Type="varchar2" MaxLength="20" />
+          <Property Name="TELEFONO" Type="varchar2" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="PLATOS">
+          <Key>
+            <PropertyRef Name="CODIGOPLATO" />
+          </Key>
+          <Property Name="CODIGOPLATO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="40" />
+          <Property Name="COSTOMANOFACTURA" Type="number" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityType Name="PLATOSMENUS">
+          <Key>
+            <PropertyRef Name="PLATO" />
+            <PropertyRef Name="MENU" />
+          </Key>
+          <Property Name="PLATO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MENU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRECIOPLATO" Type="number" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityType Name="PLATOSVALORACIONES">
+          <Key>
+            <PropertyRef Name="PLATO" />
+            <PropertyRef Name="VALORACION" />
+          </Key>
+          <Property Name="PLATO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VALORACION" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RECETAS">
+          <Key>
+            <PropertyRef Name="CODIGORECETA" />
+          </Key>
+          <Property Name="CODIGORECETA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PLATO" Type="number" Precision="38" Scale="0" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="RECETASINGREDIENTES">
+          <Key>
+            <PropertyRef Name="RECETA" />
+            <PropertyRef Name="INGREDIENTE" />
+          </Key>
+          <Property Name="RECETA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="INGREDIENTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CANTIDAD" Type="number" Precision="7" Scale="2" />
+          <Property Name="UNIDAD" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="SEXOS">
+          <Key>
+            <PropertyRef Name="CODIGOSEXO" />
+          </Key>
+          <Property Name="CODIGOSEXO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPOSPAGOS">
+          <Key>
+            <PropertyRef Name="CODIGOTIPOPAGO" />
+          </Key>
+          <Property Name="CODIGOTIPOPAGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UNIDADES">
+          <Key>
+            <PropertyRef Name="CODIGOUNIDAD" />
+          </Key>
+          <Property Name="CODIGOUNIDAD" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VALORACIONES">
+          <Key>
+            <PropertyRef Name="CODIGOVALORACION" />
+          </Key>
+          <Property Name="CODIGOVALORACION" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHA" Type="date" />
+          <Property Name="CLIENTE" Type="number" Precision="38" Scale="0" />
+          <Property Name="NUMERO" Type="number" Precision="7" Scale="2" />
+        </EntityType>
+        <Association Name="SYS_C007577">
+          <End Role="OBJETOS" Type="Self.OBJETOS" Multiplicity="1" />
+          <End Role="PLATOS" Type="Self.PLATOS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OBJETOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="PLATOS">
+              <PropertyRef Name="CODIGOPLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007579">
+          <End Role="OBJETOS" Type="Self.OBJETOS" Multiplicity="1" />
+          <End Role="INGREDIENTES" Type="Self.INGREDIENTES" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OBJETOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="INGREDIENTES">
+              <PropertyRef Name="CODIGOINGREDIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007585">
+          <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+          <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAS">
+              <PropertyRef Name="CODIGOPERSONA" />
+            </Principal>
+            <Dependent Role="EMPLEADOS">
+              <PropertyRef Name="CODIGOEMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007586">
+          <End Role="SEXOS" Type="Self.SEXOS" Multiplicity="0..1" />
+          <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXOS">
+              <PropertyRef Name="CODIGOSEXO" />
+            </Principal>
+            <Dependent Role="EMPLEADOS">
+              <PropertyRef Name="SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007587">
+          <End Role="CARGOS" Type="Self.CARGOS" Multiplicity="0..1" />
+          <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARGOS">
+              <PropertyRef Name="CODIGOCARGO" />
+            </Principal>
+            <Dependent Role="EMPLEADOS">
+              <PropertyRef Name="CARGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007589">
+          <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+          <End Role="CLIENTES_RESTAURANTE" Type="Self.CLIENTES_RESTAURANTE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONAS">
+              <PropertyRef Name="CODIGOPERSONA" />
+            </Principal>
+            <Dependent Role="CLIENTES_RESTAURANTE">
+              <PropertyRef Name="CODIGOCLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007592">
+          <End Role="PLATOS" Type="Self.PLATOS" Multiplicity="1" />
+          <End Role="PLATOSMENUS" Type="Self.PLATOSMENUS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOPLATO" />
+            </Principal>
+            <Dependent Role="PLATOSMENUS">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007593">
+          <End Role="MENUS" Type="Self.MENUS" Multiplicity="1" />
+          <End Role="PLATOSMENUS" Type="Self.PLATOSMENUS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MENUS">
+              <PropertyRef Name="CODIGOMENU" />
+            </Principal>
+            <Dependent Role="PLATOSMENUS">
+              <PropertyRef Name="MENU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007596">
+          <End Role="CLIENTES_RESTAURANTE" Type="Self.CLIENTES_RESTAURANTE" Multiplicity="0..1" />
+          <End Role="ORDENES" Type="Self.ORDENES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES_RESTAURANTE">
+              <PropertyRef Name="CODIGOCLIENTE" />
+            </Principal>
+            <Dependent Role="ORDENES">
+              <PropertyRef Name="CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007597">
+          <End Role="ESTADOORDENES" Type="Self.ESTADOORDENES" Multiplicity="0..1" />
+          <End Role="ORDENES" Type="Self.ORDENES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADOORDENES">
+              <PropertyRef Name="CODIGOESTADO" />
+            </Principal>
+            <Dependent Role="ORDENES">
+              <PropertyRef Name="ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007598">
+          <End Role="ORDENES" Type="Self.ORDENES" Multiplicity="0..1" />
+          <End Role="ORDENES1" Type="Self.ORDENES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="ORDENES1">
+              <PropertyRef Name="SUBORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007599">
+          <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="0..1" />
+          <End Role="ORDENES" Type="Self.ORDENES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADOS">
+              <PropertyRef Name="CODIGOEMPLEADO" />
+            </Principal>
+            <Dependent Role="ORDENES">
+              <PropertyRef Name="MESERO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007602">
+          <End Role="ORDENES" Type="Self.ORDENES" Multiplicity="1" />
+          <End Role="ORDENESPLATOS" Type="Self.ORDENESPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="ORDENESPLATOS">
+              <PropertyRef Name="ORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007603">
+          <End Role="PLATOS" Type="Self.PLATOS" Multiplicity="1" />
+          <End Role="ORDENESPLATOS" Type="Self.ORDENESPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOPLATO" />
+            </Principal>
+            <Dependent Role="ORDENESPLATOS">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007605">
+          <End Role="PLATOS" Type="Self.PLATOS" Multiplicity="0..1" />
+          <End Role="RECETAS" Type="Self.RECETAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOPLATO" />
+            </Principal>
+            <Dependent Role="RECETAS">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007607">
+          <End Role="RECETAS" Type="Self.RECETAS" Multiplicity="1" />
+          <End Role="RECETASINGREDIENTES" Type="Self.RECETASINGREDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECETAS">
+              <PropertyRef Name="CODIGORECETA" />
+            </Principal>
+            <Dependent Role="RECETASINGREDIENTES">
+              <PropertyRef Name="RECETA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007608">
+          <End Role="INGREDIENTES" Type="Self.INGREDIENTES" Multiplicity="1" />
+          <End Role="RECETASINGREDIENTES" Type="Self.RECETASINGREDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INGREDIENTES">
+              <PropertyRef Name="CODIGOINGREDIENTE" />
+            </Principal>
+            <Dependent Role="RECETASINGREDIENTES">
+              <PropertyRef Name="INGREDIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007609">
+          <End Role="UNIDADES" Type="Self.UNIDADES" Multiplicity="0..1" />
+          <End Role="RECETASINGREDIENTES" Type="Self.RECETASINGREDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UNIDADES">
+              <PropertyRef Name="CODIGOUNIDAD" />
+            </Principal>
+            <Dependent Role="RECETASINGREDIENTES">
+              <PropertyRef Name="UNIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007611">
+          <End Role="ORDENES" Type="Self.ORDENES" Multiplicity="1" />
+          <End Role="ORDENESMESAS" Type="Self.ORDENESMESAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="ORDENESMESAS">
+              <PropertyRef Name="ORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007612">
+          <End Role="MESAS" Type="Self.MESAS" Multiplicity="1" />
+          <End Role="ORDENESMESAS" Type="Self.ORDENESMESAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MESAS">
+              <PropertyRef Name="NUMEROMESAS" />
+            </Principal>
+            <Dependent Role="ORDENESMESAS">
+              <PropertyRef Name="MESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007615">
+          <End Role="DISTRIBUIDORES" Type="Self.DISTRIBUIDORES" Multiplicity="1" />
+          <End Role="DISTRIBUIDORESINGREDIENTES" Type="Self.DISTRIBUIDORESINGREDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DISTRIBUIDORES">
+              <PropertyRef Name="CODIGODISTRIBUIDOR" />
+            </Principal>
+            <Dependent Role="DISTRIBUIDORESINGREDIENTES">
+              <PropertyRef Name="DISTRIBUIDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007616">
+          <End Role="INGREDIENTES" Type="Self.INGREDIENTES" Multiplicity="1" />
+          <End Role="DISTRIBUIDORESINGREDIENTES" Type="Self.DISTRIBUIDORESINGREDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INGREDIENTES">
+              <PropertyRef Name="CODIGOINGREDIENTE" />
+            </Principal>
+            <Dependent Role="DISTRIBUIDORESINGREDIENTES">
+              <PropertyRef Name="INGREDIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007618">
+          <End Role="OBJETOS" Type="Self.OBJETOS" Multiplicity="1" />
+          <End Role="ACOMPANANTES" Type="Self.ACOMPANANTES" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OBJETOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="ACOMPANANTES">
+              <PropertyRef Name="CODIGOACOMPANANTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007620">
+          <End Role="DISTRIBUIDORES" Type="Self.DISTRIBUIDORES" Multiplicity="1" />
+          <End Role="DISTRIBUIDORACOMPANANTES" Type="Self.DISTRIBUIDORACOMPANANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DISTRIBUIDORES">
+              <PropertyRef Name="CODIGODISTRIBUIDOR" />
+            </Principal>
+            <Dependent Role="DISTRIBUIDORACOMPANANTES">
+              <PropertyRef Name="DISTRIBUIDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007621">
+          <End Role="ACOMPANANTES" Type="Self.ACOMPANANTES" Multiplicity="1" />
+          <End Role="DISTRIBUIDORACOMPANANTES" Type="Self.DISTRIBUIDORACOMPANANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACOMPANANTES">
+              <PropertyRef Name="CODIGOACOMPANANTE" />
+            </Principal>
+            <Dependent Role="DISTRIBUIDORACOMPANANTES">
+              <PropertyRef Name="ACOMPANANTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007623">
+          <End Role="MENUS" Type="Self.MENUS" Multiplicity="1" />
+          <End Role="MENUACOMPANANTES" Type="Self.MENUACOMPANANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MENUS">
+              <PropertyRef Name="CODIGOMENU" />
+            </Principal>
+            <Dependent Role="MENUACOMPANANTES">
+              <PropertyRef Name="MENU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007624">
+          <End Role="ACOMPANANTES" Type="Self.ACOMPANANTES" Multiplicity="1" />
+          <End Role="MENUACOMPANANTES" Type="Self.MENUACOMPANANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACOMPANANTES">
+              <PropertyRef Name="CODIGOACOMPANANTE" />
+            </Principal>
+            <Dependent Role="MENUACOMPANANTES">
+              <PropertyRef Name="ACOMPANANTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007626">
+          <End Role="ORDENES" Type="Self.ORDENES" Multiplicity="1" />
+          <End Role="ORDENESEMPLEADOPLATOS" Type="Self.ORDENESEMPLEADOPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="ORDENESEMPLEADOPLATOS">
+              <PropertyRef Name="ORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007627">
+          <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="1" />
+          <End Role="ORDENESEMPLEADOPLATOS" Type="Self.ORDENESEMPLEADOPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADOS">
+              <PropertyRef Name="CODIGOEMPLEADO" />
+            </Principal>
+            <Dependent Role="ORDENESEMPLEADOPLATOS">
+              <PropertyRef Name="EMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007628">
+          <End Role="PLATOS" Type="Self.PLATOS" Multiplicity="1" />
+          <End Role="ORDENESEMPLEADOPLATOS" Type="Self.ORDENESEMPLEADOPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOPLATO" />
+            </Principal>
+            <Dependent Role="ORDENESEMPLEADOPLATOS">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007629">
+          <End Role="CARGOS" Type="Self.CARGOS" Multiplicity="0..1" />
+          <End Role="ORDENESEMPLEADOPLATOS" Type="Self.ORDENESEMPLEADOPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARGOS">
+              <PropertyRef Name="CODIGOCARGO" />
+            </Principal>
+            <Dependent Role="ORDENESEMPLEADOPLATOS">
+              <PropertyRef Name="CARGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007632">
+          <End Role="ORDENES" Type="Self.ORDENES" Multiplicity="0..1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="ORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007633">
+          <End Role="TIPOSPAGOS" Type="Self.TIPOSPAGOS" Multiplicity="0..1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOSPAGOS">
+              <PropertyRef Name="CODIGOTIPOPAGO" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="TIPOPAGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007636">
+          <End Role="IMPUESTOS_RESTAURANTE" Type="Self.IMPUESTOS_RESTAURANTE" Multiplicity="1" />
+          <End Role="IMPUESTOSOBJETOS" Type="Self.IMPUESTOSOBJETOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMPUESTOS_RESTAURANTE">
+              <PropertyRef Name="CODIGOIMPUESTO" />
+            </Principal>
+            <Dependent Role="IMPUESTOSOBJETOS">
+              <PropertyRef Name="IMPUESTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007637">
+          <End Role="OBJETOS" Type="Self.OBJETOS" Multiplicity="1" />
+          <End Role="IMPUESTOSOBJETOS" Type="Self.IMPUESTOSOBJETOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBJETOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="IMPUESTOSOBJETOS">
+              <PropertyRef Name="OBJETO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007642">
+          <End Role="CLIENTES_RESTAURANTE" Type="Self.CLIENTES_RESTAURANTE" Multiplicity="0..1" />
+          <End Role="VALORACIONES" Type="Self.VALORACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES_RESTAURANTE">
+              <PropertyRef Name="CODIGOCLIENTE" />
+            </Principal>
+            <Dependent Role="VALORACIONES">
+              <PropertyRef Name="CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007644">
+          <End Role="PLATOS" Type="Self.PLATOS" Multiplicity="1" />
+          <End Role="PLATOSVALORACIONES" Type="Self.PLATOSVALORACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOPLATO" />
+            </Principal>
+            <Dependent Role="PLATOSVALORACIONES">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007645">
+          <End Role="VALORACIONES" Type="Self.VALORACIONES" Multiplicity="1" />
+          <End Role="PLATOSVALORACIONES" Type="Self.PLATOSVALORACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VALORACIONES">
+              <PropertyRef Name="CODIGOVALORACION" />
+            </Principal>
+            <Dependent Role="PLATOSVALORACIONES">
+              <PropertyRef Name="VALORACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007647">
+          <End Role="OBJETOS" Type="Self.OBJETOS" Multiplicity="1" />
+          <End Role="OBJETOSINVENTARIOS" Type="Self.OBJETOSINVENTARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBJETOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="OBJETOSINVENTARIOS">
+              <PropertyRef Name="OBJETO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007648">
+          <End Role="INVENTARIOS" Type="Self.INVENTARIOS" Multiplicity="1" />
+          <End Role="OBJETOSINVENTARIOS" Type="Self.OBJETOSINVENTARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INVENTARIOS">
+              <PropertyRef Name="CODIGOINVENTARIO" />
+            </Principal>
+            <Dependent Role="OBJETOSINVENTARIOS">
+              <PropertyRef Name="INVENTARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ACOMPANANTES" EntityType="Self.ACOMPANANTES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="CARGOS" EntityType="Self.CARGOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="CLIENTES_RESTAURANTE" EntityType="Self.CLIENTES_RESTAURANTE" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="DISTRIBUIDORACOMPANANTES" EntityType="Self.DISTRIBUIDORACOMPANANTES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="DISTRIBUIDORES" EntityType="Self.DISTRIBUIDORES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="DISTRIBUIDORESINGREDIENTES" EntityType="Self.DISTRIBUIDORESINGREDIENTES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="EMPLEADOS" EntityType="Self.EMPLEADOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="ESTADOORDENES" EntityType="Self.ESTADOORDENES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="FACTURAS" EntityType="Self.FACTURAS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="IMPUESTOS_RESTAURANTE" EntityType="Self.IMPUESTOS_RESTAURANTE" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="IMPUESTOSOBJETOS" EntityType="Self.IMPUESTOSOBJETOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="INGREDIENTES" EntityType="Self.INGREDIENTES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="INVENTARIOS" EntityType="Self.INVENTARIOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="MENUACOMPANANTES" EntityType="Self.MENUACOMPANANTES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="MENUS" EntityType="Self.MENUS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="MESAS" EntityType="Self.MESAS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="OBJETOS" EntityType="Self.OBJETOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="OBJETOSINVENTARIOS" EntityType="Self.OBJETOSINVENTARIOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="ORDENES" EntityType="Self.ORDENES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="ORDENESEMPLEADOPLATOS" EntityType="Self.ORDENESEMPLEADOPLATOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="ORDENESMESAS" EntityType="Self.ORDENESMESAS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="ORDENESPLATOS" EntityType="Self.ORDENESPLATOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="PERSONAS" EntityType="Self.PERSONAS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="PLATOS" EntityType="Self.PLATOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="PLATOSMENUS" EntityType="Self.PLATOSMENUS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="PLATOSVALORACIONES" EntityType="Self.PLATOSVALORACIONES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="RECETAS" EntityType="Self.RECETAS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="RECETASINGREDIENTES" EntityType="Self.RECETASINGREDIENTES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="SEXOS" EntityType="Self.SEXOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="TIPOSPAGOS" EntityType="Self.TIPOSPAGOS" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="UNIDADES" EntityType="Self.UNIDADES" Schema="JEANLO" store:Type="Tables" />
+          <EntitySet Name="VALORACIONES" EntityType="Self.VALORACIONES" Schema="JEANLO" store:Type="Tables" />
+          <AssociationSet Name="SYS_C007577" Association="Self.SYS_C007577">
+            <End Role="OBJETOS" EntitySet="OBJETOS" />
+            <End Role="PLATOS" EntitySet="PLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007579" Association="Self.SYS_C007579">
+            <End Role="OBJETOS" EntitySet="OBJETOS" />
+            <End Role="INGREDIENTES" EntitySet="INGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007585" Association="Self.SYS_C007585">
+            <End Role="PERSONAS" EntitySet="PERSONAS" />
+            <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007586" Association="Self.SYS_C007586">
+            <End Role="SEXOS" EntitySet="SEXOS" />
+            <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007587" Association="Self.SYS_C007587">
+            <End Role="CARGOS" EntitySet="CARGOS" />
+            <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007589" Association="Self.SYS_C007589">
+            <End Role="PERSONAS" EntitySet="PERSONAS" />
+            <End Role="CLIENTES_RESTAURANTE" EntitySet="CLIENTES_RESTAURANTE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007592" Association="Self.SYS_C007592">
+            <End Role="PLATOS" EntitySet="PLATOS" />
+            <End Role="PLATOSMENUS" EntitySet="PLATOSMENUS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007593" Association="Self.SYS_C007593">
+            <End Role="MENUS" EntitySet="MENUS" />
+            <End Role="PLATOSMENUS" EntitySet="PLATOSMENUS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007596" Association="Self.SYS_C007596">
+            <End Role="CLIENTES_RESTAURANTE" EntitySet="CLIENTES_RESTAURANTE" />
+            <End Role="ORDENES" EntitySet="ORDENES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007597" Association="Self.SYS_C007597">
+            <End Role="ESTADOORDENES" EntitySet="ESTADOORDENES" />
+            <End Role="ORDENES" EntitySet="ORDENES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007598" Association="Self.SYS_C007598">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="ORDENES1" EntitySet="ORDENES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007599" Association="Self.SYS_C007599">
+            <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+            <End Role="ORDENES" EntitySet="ORDENES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007602" Association="Self.SYS_C007602">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="ORDENESPLATOS" EntitySet="ORDENESPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007603" Association="Self.SYS_C007603">
+            <End Role="PLATOS" EntitySet="PLATOS" />
+            <End Role="ORDENESPLATOS" EntitySet="ORDENESPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007605" Association="Self.SYS_C007605">
+            <End Role="PLATOS" EntitySet="PLATOS" />
+            <End Role="RECETAS" EntitySet="RECETAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007607" Association="Self.SYS_C007607">
+            <End Role="RECETAS" EntitySet="RECETAS" />
+            <End Role="RECETASINGREDIENTES" EntitySet="RECETASINGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007608" Association="Self.SYS_C007608">
+            <End Role="INGREDIENTES" EntitySet="INGREDIENTES" />
+            <End Role="RECETASINGREDIENTES" EntitySet="RECETASINGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007609" Association="Self.SYS_C007609">
+            <End Role="UNIDADES" EntitySet="UNIDADES" />
+            <End Role="RECETASINGREDIENTES" EntitySet="RECETASINGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007611" Association="Self.SYS_C007611">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="ORDENESMESAS" EntitySet="ORDENESMESAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007612" Association="Self.SYS_C007612">
+            <End Role="MESAS" EntitySet="MESAS" />
+            <End Role="ORDENESMESAS" EntitySet="ORDENESMESAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007615" Association="Self.SYS_C007615">
+            <End Role="DISTRIBUIDORES" EntitySet="DISTRIBUIDORES" />
+            <End Role="DISTRIBUIDORESINGREDIENTES" EntitySet="DISTRIBUIDORESINGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007616" Association="Self.SYS_C007616">
+            <End Role="INGREDIENTES" EntitySet="INGREDIENTES" />
+            <End Role="DISTRIBUIDORESINGREDIENTES" EntitySet="DISTRIBUIDORESINGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007618" Association="Self.SYS_C007618">
+            <End Role="OBJETOS" EntitySet="OBJETOS" />
+            <End Role="ACOMPANANTES" EntitySet="ACOMPANANTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007620" Association="Self.SYS_C007620">
+            <End Role="DISTRIBUIDORES" EntitySet="DISTRIBUIDORES" />
+            <End Role="DISTRIBUIDORACOMPANANTES" EntitySet="DISTRIBUIDORACOMPANANTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007621" Association="Self.SYS_C007621">
+            <End Role="ACOMPANANTES" EntitySet="ACOMPANANTES" />
+            <End Role="DISTRIBUIDORACOMPANANTES" EntitySet="DISTRIBUIDORACOMPANANTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007623" Association="Self.SYS_C007623">
+            <End Role="MENUS" EntitySet="MENUS" />
+            <End Role="MENUACOMPANANTES" EntitySet="MENUACOMPANANTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007624" Association="Self.SYS_C007624">
+            <End Role="ACOMPANANTES" EntitySet="ACOMPANANTES" />
+            <End Role="MENUACOMPANANTES" EntitySet="MENUACOMPANANTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007626" Association="Self.SYS_C007626">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="ORDENESEMPLEADOPLATOS" EntitySet="ORDENESEMPLEADOPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007627" Association="Self.SYS_C007627">
+            <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+            <End Role="ORDENESEMPLEADOPLATOS" EntitySet="ORDENESEMPLEADOPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007628" Association="Self.SYS_C007628">
+            <End Role="PLATOS" EntitySet="PLATOS" />
+            <End Role="ORDENESEMPLEADOPLATOS" EntitySet="ORDENESEMPLEADOPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007629" Association="Self.SYS_C007629">
+            <End Role="CARGOS" EntitySet="CARGOS" />
+            <End Role="ORDENESEMPLEADOPLATOS" EntitySet="ORDENESEMPLEADOPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007632" Association="Self.SYS_C007632">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007633" Association="Self.SYS_C007633">
+            <End Role="TIPOSPAGOS" EntitySet="TIPOSPAGOS" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007636" Association="Self.SYS_C007636">
+            <End Role="IMPUESTOS_RESTAURANTE" EntitySet="IMPUESTOS_RESTAURANTE" />
+            <End Role="IMPUESTOSOBJETOS" EntitySet="IMPUESTOSOBJETOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007637" Association="Self.SYS_C007637">
+            <End Role="OBJETOS" EntitySet="OBJETOS" />
+            <End Role="IMPUESTOSOBJETOS" EntitySet="IMPUESTOSOBJETOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007642" Association="Self.SYS_C007642">
+            <End Role="CLIENTES_RESTAURANTE" EntitySet="CLIENTES_RESTAURANTE" />
+            <End Role="VALORACIONES" EntitySet="VALORACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007644" Association="Self.SYS_C007644">
+            <End Role="PLATOS" EntitySet="PLATOS" />
+            <End Role="PLATOSVALORACIONES" EntitySet="PLATOSVALORACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007645" Association="Self.SYS_C007645">
+            <End Role="VALORACIONES" EntitySet="VALORACIONES" />
+            <End Role="PLATOSVALORACIONES" EntitySet="PLATOSVALORACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007647" Association="Self.SYS_C007647">
+            <End Role="OBJETOS" EntitySet="OBJETOS" />
+            <End Role="OBJETOSINVENTARIOS" EntitySet="OBJETOSINVENTARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007648" Association="Self.SYS_C007648">
+            <End Role="INVENTARIOS" EntitySet="INVENTARIOS" />
+            <End Role="OBJETOSINVENTARIOS" EntitySet="OBJETOSINVENTARIOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CARGOS" EntityType="Model.CARGOS" />
+          <EntitySet Name="DISTRIBUIDORES" EntityType="Model.DISTRIBUIDORES" />
+          <EntitySet Name="ESTADOORDENES" EntityType="Model.ESTADOORDENES" />
+          <EntitySet Name="FACTURAS" EntityType="Model.FACTURAS" />
+          <EntitySet Name="IMPUESTOS_RESTAURANTE" EntityType="Model.IMPUESTOS_RESTAURANTE" />
+          <EntitySet Name="INVENTARIOS" EntityType="Model.INVENTARIOS" />
+          <EntitySet Name="MENUS" EntityType="Model.MENUS" />
+          <EntitySet Name="MESAS" EntityType="Model.MESAS" />
+          <EntitySet Name="OBJETOS" EntityType="Model.OBJETOS" />
+          <EntitySet Name="OBJETOSINVENTARIOS" EntityType="Model.OBJETOSINVENTARIOS" />
+          <EntitySet Name="ORDENES" EntityType="Model.ORDENES" />
+          <EntitySet Name="ORDENESEMPLEADOPLATOS" EntityType="Model.ORDENESEMPLEADOPLATOS" />
+          <EntitySet Name="ORDENESPLATOS" EntityType="Model.ORDENESPLATOS" />
+          <EntitySet Name="PERSONAS" EntityType="Model.PERSONAS" />
+          <EntitySet Name="PLATOSMENUS" EntityType="Model.PLATOSMENUS" />
+          <EntitySet Name="RECETAS" EntityType="Model.RECETAS" />
+          <EntitySet Name="RECETASINGREDIENTES" EntityType="Model.RECETASINGREDIENTES" />
+          <EntitySet Name="SEXOS" EntityType="Model.SEXOS" />
+          <EntitySet Name="TIPOSPAGOS" EntityType="Model.TIPOSPAGOS" />
+          <EntitySet Name="UNIDADES" EntityType="Model.UNIDADES" />
+          <EntitySet Name="VALORACIONES" EntityType="Model.VALORACIONES" />
+          <AssociationSet Name="SYS_C007587" Association="Model.SYS_C007587">
+            <End Role="CARGOS" EntitySet="CARGOS" />
+            <End Role="EMPLEADOS" EntitySet="PERSONAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007629" Association="Model.SYS_C007629">
+            <End Role="CARGOS" EntitySet="CARGOS" />
+            <End Role="ORDENESEMPLEADOPLATOS" EntitySet="ORDENESEMPLEADOPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007596" Association="Model.SYS_C007596">
+            <End Role="CLIENTES_RESTAURANTE" EntitySet="PERSONAS" />
+            <End Role="ORDENES" EntitySet="ORDENES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007642" Association="Model.SYS_C007642">
+            <End Role="CLIENTES_RESTAURANTE" EntitySet="PERSONAS" />
+            <End Role="VALORACIONES" EntitySet="VALORACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007586" Association="Model.SYS_C007586">
+            <End Role="SEXOS" EntitySet="SEXOS" />
+            <End Role="EMPLEADOS" EntitySet="PERSONAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007599" Association="Model.SYS_C007599">
+            <End Role="EMPLEADOS" EntitySet="PERSONAS" />
+            <End Role="ORDENES" EntitySet="ORDENES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007627" Association="Model.SYS_C007627">
+            <End Role="EMPLEADOS" EntitySet="PERSONAS" />
+            <End Role="ORDENESEMPLEADOPLATOS" EntitySet="ORDENESEMPLEADOPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007597" Association="Model.SYS_C007597">
+            <End Role="ESTADOORDENES" EntitySet="ESTADOORDENES" />
+            <End Role="ORDENES" EntitySet="ORDENES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007632" Association="Model.SYS_C007632">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007633" Association="Model.SYS_C007633">
+            <End Role="TIPOSPAGOS" EntitySet="TIPOSPAGOS" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007608" Association="Model.SYS_C007608">
+            <End Role="INGREDIENTES" EntitySet="OBJETOS" />
+            <End Role="RECETASINGREDIENTES" EntitySet="RECETASINGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007648" Association="Model.SYS_C007648">
+            <End Role="INVENTARIOS" EntitySet="INVENTARIOS" />
+            <End Role="OBJETOSINVENTARIOS" EntitySet="OBJETOSINVENTARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007593" Association="Model.SYS_C007593">
+            <End Role="MENUS" EntitySet="MENUS" />
+            <End Role="PLATOSMENUS" EntitySet="PLATOSMENUS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007647" Association="Model.SYS_C007647">
+            <End Role="OBJETOS" EntitySet="OBJETOS" />
+            <End Role="OBJETOSINVENTARIOS" EntitySet="OBJETOSINVENTARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007598" Association="Model.SYS_C007598">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="ORDENES1" EntitySet="ORDENES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007602" Association="Model.SYS_C007602">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="ORDENESPLATOS" EntitySet="ORDENESPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007626" Association="Model.SYS_C007626">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="ORDENESEMPLEADOPLATOS" EntitySet="ORDENESEMPLEADOPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007628" Association="Model.SYS_C007628">
+            <End Role="PLATOS" EntitySet="OBJETOS" />
+            <End Role="ORDENESEMPLEADOPLATOS" EntitySet="ORDENESEMPLEADOPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007603" Association="Model.SYS_C007603">
+            <End Role="PLATOS" EntitySet="OBJETOS" />
+            <End Role="ORDENESPLATOS" EntitySet="ORDENESPLATOS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007592" Association="Model.SYS_C007592">
+            <End Role="PLATOS" EntitySet="OBJETOS" />
+            <End Role="PLATOSMENUS" EntitySet="PLATOSMENUS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007605" Association="Model.SYS_C007605">
+            <End Role="PLATOS" EntitySet="OBJETOS" />
+            <End Role="RECETAS" EntitySet="RECETAS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007607" Association="Model.SYS_C007607">
+            <End Role="RECETAS" EntitySet="RECETAS" />
+            <End Role="RECETASINGREDIENTES" EntitySet="RECETASINGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007609" Association="Model.SYS_C007609">
+            <End Role="UNIDADES" EntitySet="UNIDADES" />
+            <End Role="RECETASINGREDIENTES" EntitySet="RECETASINGREDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="DISTRIBUIDORACOMPANANTES" Association="Model.DISTRIBUIDORACOMPANANTES">
+            <End Role="DISTRIBUIDORES" EntitySet="DISTRIBUIDORES" />
+            <End Role="ACOMPANANTES" EntitySet="OBJETOS" />
+          </AssociationSet>
+          <AssociationSet Name="DISTRIBUIDORESINGREDIENTES" Association="Model.DISTRIBUIDORESINGREDIENTES">
+            <End Role="DISTRIBUIDORES" EntitySet="DISTRIBUIDORES" />
+            <End Role="INGREDIENTES" EntitySet="OBJETOS" />
+          </AssociationSet>
+          <AssociationSet Name="IMPUESTOSOBJETOS" Association="Model.IMPUESTOSOBJETOS">
+            <End Role="IMPUESTOS_RESTAURANTE" EntitySet="IMPUESTOS_RESTAURANTE" />
+            <End Role="OBJETOS" EntitySet="OBJETOS" />
+          </AssociationSet>
+          <AssociationSet Name="MENUACOMPANANTES" Association="Model.MENUACOMPANANTES">
+            <End Role="MENUS" EntitySet="MENUS" />
+            <End Role="ACOMPANANTES" EntitySet="OBJETOS" />
+          </AssociationSet>
+          <AssociationSet Name="ORDENESMESAS" Association="Model.ORDENESMESAS">
+            <End Role="ORDENES" EntitySet="ORDENES" />
+            <End Role="MESAS" EntitySet="MESAS" />
+          </AssociationSet>
+          <AssociationSet Name="PLATOSVALORACIONES" Association="Model.PLATOSVALORACIONES">
+            <End Role="PLATOS" EntitySet="OBJETOS" />
+            <End Role="VALORACIONES" EntitySet="VALORACIONES" />
+          </AssociationSet>
+        </EntityContainer>
+        <EnumType Name="E_Sexos">
+          <Member Name="Femenino" Value="1" />
+          <Member Name="Masculino" Value="2" />
+        </EnumType>
+        <EnumType Name="E_Cargos">
+          <Member Name="Chef" Value="1" />
+          <Member Name="Camarero" Value="2" />
+        </EnumType>
+        <EnumType Name="E_Impuestos">
+          <Member Name="Gubernamental" Value="1" />
+        </EnumType>
+        <EnumType Name="E_Estados">
+          <Member Name="Procesando" Value="1" />
+        </EnumType>
+        <EnumType Name="E_TiposPago">
+          <Member Name="Efectivo" Value="1" />
+          <Member Name="TarjetaCredito" Value="2" />
+        </EnumType>
+        <EnumType Name="E_Unidades">
+          <Member Name="Kg" Value="1" />
+          <Member Name="Lb" Value="2" />
+        </EnumType>
+        <EntityType Name="ACOMPANANTES" BaseType="Model.OBJETOS">
+          <Property Name="NOMBRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DISTRIBUIDORES" Relationship="Model.DISTRIBUIDORACOMPANANTES" FromRole="ACOMPANANTES" ToRole="DISTRIBUIDORES" />
+          <NavigationProperty Name="MENUS" Relationship="Model.MENUACOMPANANTES" FromRole="ACOMPANANTES" ToRole="MENUS" />
+        </EntityType>
+        <EntityType Name="CARGOS">
+          <Key>
+            <PropertyRef Name="CODIGOCARGO" />
+          </Key>
+          <Property Name="CODIGOCARGO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="EMPLEADOS" Relationship="Model.SYS_C007587" FromRole="CARGOS" ToRole="EMPLEADOS" />
+          <NavigationProperty Name="ORDENESEMPLEADOPLATOS" Relationship="Model.SYS_C007629" FromRole="CARGOS" ToRole="ORDENESEMPLEADOPLATOS" />
+        </EntityType>
+        <EntityType Name="CLIENTES_RESTAURANTE" BaseType="Model.PERSONAS">
+          <NavigationProperty Name="ORDENES" Relationship="Model.SYS_C007596" FromRole="CLIENTES_RESTAURANTE" ToRole="ORDENES" />
+          <NavigationProperty Name="VALORACIONES" Relationship="Model.SYS_C007642" FromRole="CLIENTES_RESTAURANTE" ToRole="VALORACIONES" />
+        </EntityType>
+        <EntityType Name="DISTRIBUIDORES">
+          <Key>
+            <PropertyRef Name="CODIGODISTRIBUIDOR" />
+          </Key>
+          <Property Name="CODIGODISTRIBUIDOR" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RNC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ACOMPANANTES" Relationship="Model.DISTRIBUIDORACOMPANANTES" FromRole="DISTRIBUIDORES" ToRole="ACOMPANANTES" />
+          <NavigationProperty Name="INGREDIENTES" Relationship="Model.DISTRIBUIDORESINGREDIENTES" FromRole="DISTRIBUIDORES" ToRole="INGREDIENTES" />
+        </EntityType>
+        <EntityType Name="EMPLEADOS" BaseType="Model.PERSONAS">
+          <Property Name="SEXO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CARGO" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="CARGOS" Relationship="Model.SYS_C007587" FromRole="EMPLEADOS" ToRole="CARGOS" />
+          <NavigationProperty Name="SEXOS" Relationship="Model.SYS_C007586" FromRole="EMPLEADOS" ToRole="SEXOS" />
+          <NavigationProperty Name="ORDENES" Relationship="Model.SYS_C007599" FromRole="EMPLEADOS" ToRole="ORDENES" />
+          <NavigationProperty Name="ORDENESEMPLEADOPLATOS" Relationship="Model.SYS_C007627" FromRole="EMPLEADOS" ToRole="ORDENESEMPLEADOPLATOS" />
+        </EntityType>
+        <EntityType Name="ESTADOORDENES">
+          <Key>
+            <PropertyRef Name="CODIGOESTADO" />
+          </Key>
+          <Property Name="CODIGOESTADO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="ORDENES" Relationship="Model.SYS_C007597" FromRole="ESTADOORDENES" ToRole="ORDENES" />
+        </EntityType>
+        <EntityType Name="FACTURAS">
+          <Key>
+            <PropertyRef Name="CODIGOFACTURA" />
+          </Key>
+          <Property Name="CODIGOFACTURA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ORDEN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TIPOPAGO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FECHA" Type="DateTime" />
+          <Property Name="HORA" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MINUTO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SEGUNDO" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="ORDENES" Relationship="Model.SYS_C007632" FromRole="FACTURAS" ToRole="ORDENES" />
+          <NavigationProperty Name="TIPOSPAGOS" Relationship="Model.SYS_C007633" FromRole="FACTURAS" ToRole="TIPOSPAGOS" />
+        </EntityType>
+        <EntityType Name="IMPUESTOS_RESTAURANTE">
+          <Key>
+            <PropertyRef Name="CODIGOIMPUESTO" />
+          </Key>
+          <Property Name="CODIGOIMPUESTO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TARIFA" Type="Decimal" Precision="7" Scale="2" />
+          <NavigationProperty Name="OBJETOS" Relationship="Model.IMPUESTOSOBJETOS" FromRole="IMPUESTOS_RESTAURANTE" ToRole="OBJETOS" />
+        </EntityType>
+        <EntityType Name="INGREDIENTES" BaseType="Model.OBJETOS">
+          <Property Name="NOMBRE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PRECIO" Type="Decimal" Precision="7" Scale="2" />
+          <NavigationProperty Name="RECETASINGREDIENTES" Relationship="Model.SYS_C007608" FromRole="INGREDIENTES" ToRole="RECETASINGREDIENTES" />
+          <NavigationProperty Name="DISTRIBUIDORES" Relationship="Model.DISTRIBUIDORESINGREDIENTES" FromRole="INGREDIENTES" ToRole="DISTRIBUIDORES" />
+        </EntityType>
+        <EntityType Name="INVENTARIOS">
+          <Key>
+            <PropertyRef Name="CODIGOINVENTARIO" />
+          </Key>
+          <Property Name="CODIGOINVENTARIO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OBJETOSINVENTARIOS" Relationship="Model.SYS_C007648" FromRole="INVENTARIOS" ToRole="OBJETOSINVENTARIOS" />
+        </EntityType>
+        <EntityType Name="MENUS">
+          <Key>
+            <PropertyRef Name="CODIGOMENU" />
+          </Key>
+          <Property Name="CODIGOMENU" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="PLATOSMENUS" Relationship="Model.SYS_C007593" FromRole="MENUS" ToRole="PLATOSMENUS" />
+          <NavigationProperty Name="ACOMPANANTES" Relationship="Model.MENUACOMPANANTES" FromRole="MENUS" ToRole="ACOMPANANTES" />
+        </EntityType>
+        <EntityType Name="MESAS">
+          <Key>
+            <PropertyRef Name="NUMEROMESAS" />
+          </Key>
+          <Property Name="NUMEROMESAS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="ORDENES" Relationship="Model.ORDENESMESAS" FromRole="MESAS" ToRole="ORDENES" />
+        </EntityType>
+        <EntityType Name="OBJETOS">
+          <Key>
+            <PropertyRef Name="CODIGOOBJETO" />
+          </Key>
+          <Property Name="CODIGOOBJETO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="OBJETOSINVENTARIOS" Relationship="Model.SYS_C007647" FromRole="OBJETOS" ToRole="OBJETOSINVENTARIOS" />
+          <NavigationProperty Name="IMPUESTOS_RESTAURANTE" Relationship="Model.IMPUESTOSOBJETOS" FromRole="OBJETOS" ToRole="IMPUESTOS_RESTAURANTE" />
+        </EntityType>
+        <EntityType Name="OBJETOSINVENTARIOS">
+          <Key>
+            <PropertyRef Name="OBJETO" />
+            <PropertyRef Name="INVENTARIO" />
+          </Key>
+          <Property Name="OBJETO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="INVENTARIO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CANTIDAD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="UNIDADES" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="INVENTARIOS" Relationship="Model.SYS_C007648" FromRole="OBJETOSINVENTARIOS" ToRole="INVENTARIOS" />
+          <NavigationProperty Name="OBJETOS" Relationship="Model.SYS_C007647" FromRole="OBJETOSINVENTARIOS" ToRole="OBJETOS" />
+        </EntityType>
+        <EntityType Name="ORDENES">
+          <Key>
+            <PropertyRef Name="CODIGOORDEN" />
+          </Key>
+          <Property Name="CODIGOORDEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CLIENTE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ESTADO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COSTOTOTAL" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="FECHA" Type="DateTime" />
+          <Property Name="HORA" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MINUTO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SEGUNDO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SUBORDEN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MESERO" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="CLIENTES_RESTAURANTE" Relationship="Model.SYS_C007596" FromRole="ORDENES" ToRole="CLIENTES_RESTAURANTE" />
+          <NavigationProperty Name="EMPLEADOS" Relationship="Model.SYS_C007599" FromRole="ORDENES" ToRole="EMPLEADOS" />
+          <NavigationProperty Name="ESTADOORDENES" Relationship="Model.SYS_C007597" FromRole="ORDENES" ToRole="ESTADOORDENES" />
+          <NavigationProperty Name="FACTURAS" Relationship="Model.SYS_C007632" FromRole="ORDENES" ToRole="FACTURAS" />
+          <NavigationProperty Name="ORDENES1" Relationship="Model.SYS_C007598" FromRole="ORDENES" ToRole="ORDENES1" />
+          <NavigationProperty Name="ORDENES2" Relationship="Model.SYS_C007598" FromRole="ORDENES1" ToRole="ORDENES" />
+          <NavigationProperty Name="ORDENESPLATOS" Relationship="Model.SYS_C007602" FromRole="ORDENES" ToRole="ORDENESPLATOS" />
+          <NavigationProperty Name="ORDENESEMPLEADOPLATOS" Relationship="Model.SYS_C007626" FromRole="ORDENES" ToRole="ORDENESEMPLEADOPLATOS" />
+          <NavigationProperty Name="MESAS" Relationship="Model.ORDENESMESAS" FromRole="ORDENES" ToRole="MESAS" />
+        </EntityType>
+        <EntityType Name="ORDENESEMPLEADOPLATOS">
+          <Key>
+            <PropertyRef Name="ORDEN" />
+            <PropertyRef Name="EMPLEADO" />
+            <PropertyRef Name="PLATO" />
+          </Key>
+          <Property Name="ORDEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="EMPLEADO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PLATO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CARGO" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="CARGOS" Relationship="Model.SYS_C007629" FromRole="ORDENESEMPLEADOPLATOS" ToRole="CARGOS" />
+          <NavigationProperty Name="EMPLEADOS" Relationship="Model.SYS_C007627" FromRole="ORDENESEMPLEADOPLATOS" ToRole="EMPLEADOS" />
+          <NavigationProperty Name="ORDENES" Relationship="Model.SYS_C007626" FromRole="ORDENESEMPLEADOPLATOS" ToRole="ORDENES" />
+          <NavigationProperty Name="PLATOS" Relationship="Model.SYS_C007628" FromRole="ORDENESEMPLEADOPLATOS" ToRole="PLATOS" />
+        </EntityType>
+        <EntityType Name="ORDENESPLATOS">
+          <Key>
+            <PropertyRef Name="ORDEN" />
+            <PropertyRef Name="PLATO" />
+          </Key>
+          <Property Name="ORDEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PLATO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CANTIDAD" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="ORDENES" Relationship="Model.SYS_C007602" FromRole="ORDENESPLATOS" ToRole="ORDENES" />
+          <NavigationProperty Name="PLATOS" Relationship="Model.SYS_C007603" FromRole="ORDENESPLATOS" ToRole="PLATOS" />
+        </EntityType>
+        <EntityType Name="PERSONAS">
+          <Key>
+            <PropertyRef Name="CODIGOPERSONA" />
+          </Key>
+          <Property Name="CODIGOPERSONA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="DOCUMENTOIDENTIDAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PLATOS" BaseType="Model.OBJETOS">
+          <Property Name="NOMBRE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="COSTOMANOFACTURA" Type="Decimal" Precision="7" Scale="2" />
+          <NavigationProperty Name="ORDENESEMPLEADOPLATOS" Relationship="Model.SYS_C007628" FromRole="PLATOS" ToRole="ORDENESEMPLEADOPLATOS" />
+          <NavigationProperty Name="ORDENESPLATOS" Relationship="Model.SYS_C007603" FromRole="PLATOS" ToRole="ORDENESPLATOS" />
+          <NavigationProperty Name="PLATOSMENUS" Relationship="Model.SYS_C007592" FromRole="PLATOS" ToRole="PLATOSMENUS" />
+          <NavigationProperty Name="RECETAS" Relationship="Model.SYS_C007605" FromRole="PLATOS" ToRole="RECETAS" />
+          <NavigationProperty Name="VALORACIONES" Relationship="Model.PLATOSVALORACIONES" FromRole="PLATOS" ToRole="VALORACIONES" />
+        </EntityType>
+        <EntityType Name="PLATOSMENUS">
+          <Key>
+            <PropertyRef Name="PLATO" />
+            <PropertyRef Name="MENU" />
+          </Key>
+          <Property Name="PLATO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="MENU" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PRECIOPLATO" Type="Decimal" Precision="7" Scale="2" />
+          <NavigationProperty Name="MENUS" Relationship="Model.SYS_C007593" FromRole="PLATOSMENUS" ToRole="MENUS" />
+          <NavigationProperty Name="PLATOS" Relationship="Model.SYS_C007592" FromRole="PLATOSMENUS" ToRole="PLATOS" />
+        </EntityType>
+        <EntityType Name="RECETAS">
+          <Key>
+            <PropertyRef Name="CODIGORECETA" />
+          </Key>
+          <Property Name="CODIGORECETA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PLATO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PLATOS" Relationship="Model.SYS_C007605" FromRole="RECETAS" ToRole="PLATOS" />
+          <NavigationProperty Name="RECETASINGREDIENTES" Relationship="Model.SYS_C007607" FromRole="RECETAS" ToRole="RECETASINGREDIENTES" />
+        </EntityType>
+        <EntityType Name="RECETASINGREDIENTES">
+          <Key>
+            <PropertyRef Name="RECETA" />
+            <PropertyRef Name="INGREDIENTE" />
+          </Key>
+          <Property Name="RECETA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="INGREDIENTE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CANTIDAD" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="UNIDAD" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="INGREDIENTES" Relationship="Model.SYS_C007608" FromRole="RECETASINGREDIENTES" ToRole="INGREDIENTES" />
+          <NavigationProperty Name="RECETAS" Relationship="Model.SYS_C007607" FromRole="RECETASINGREDIENTES" ToRole="RECETAS" />
+          <NavigationProperty Name="UNIDADES" Relationship="Model.SYS_C007609" FromRole="RECETASINGREDIENTES" ToRole="UNIDADES" />
+        </EntityType>
+        <EntityType Name="SEXOS">
+          <Key>
+            <PropertyRef Name="CODIGOSEXO" />
+          </Key>
+          <Property Name="CODIGOSEXO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="EMPLEADOS" Relationship="Model.SYS_C007586" FromRole="SEXOS" ToRole="EMPLEADOS" />
+        </EntityType>
+        <EntityType Name="TIPOSPAGOS">
+          <Key>
+            <PropertyRef Name="CODIGOTIPOPAGO" />
+          </Key>
+          <Property Name="CODIGOTIPOPAGO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="FACTURAS" Relationship="Model.SYS_C007633" FromRole="TIPOSPAGOS" ToRole="FACTURAS" />
+        </EntityType>
+        <EntityType Name="UNIDADES">
+          <Key>
+            <PropertyRef Name="CODIGOUNIDAD" />
+          </Key>
+          <Property Name="CODIGOUNIDAD" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="RECETASINGREDIENTES" Relationship="Model.SYS_C007609" FromRole="UNIDADES" ToRole="RECETASINGREDIENTES" />
+        </EntityType>
+        <EntityType Name="VALORACIONES">
+          <Key>
+            <PropertyRef Name="CODIGOVALORACION" />
+          </Key>
+          <Property Name="CODIGOVALORACION" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FECHA" Type="DateTime" />
+          <Property Name="CLIENTE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NUMERO" Type="Decimal" Precision="7" Scale="2" />
+          <NavigationProperty Name="CLIENTES_RESTAURANTE" Relationship="Model.SYS_C007642" FromRole="VALORACIONES" ToRole="CLIENTES_RESTAURANTE" />
+          <NavigationProperty Name="PLATOS" Relationship="Model.PLATOSVALORACIONES" FromRole="VALORACIONES" ToRole="PLATOS" />
+        </EntityType>
+        <Association Name="SYS_C007587">
+          <End Type="Model.CARGOS" Role="CARGOS" Multiplicity="0..1" />
+          <End Type="Model.EMPLEADOS" Role="EMPLEADOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARGOS">
+              <PropertyRef Name="CODIGOCARGO" />
+            </Principal>
+            <Dependent Role="EMPLEADOS">
+              <PropertyRef Name="CARGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007629">
+          <End Type="Model.CARGOS" Role="CARGOS" Multiplicity="0..1" />
+          <End Type="Model.ORDENESEMPLEADOPLATOS" Role="ORDENESEMPLEADOPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARGOS">
+              <PropertyRef Name="CODIGOCARGO" />
+            </Principal>
+            <Dependent Role="ORDENESEMPLEADOPLATOS">
+              <PropertyRef Name="CARGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007596">
+          <End Type="Model.CLIENTES_RESTAURANTE" Role="CLIENTES_RESTAURANTE" Multiplicity="0..1" />
+          <End Type="Model.ORDENES" Role="ORDENES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES_RESTAURANTE">
+              <PropertyRef Name="CODIGOPERSONA" />
+            </Principal>
+            <Dependent Role="ORDENES">
+              <PropertyRef Name="CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007642">
+          <End Type="Model.CLIENTES_RESTAURANTE" Role="CLIENTES_RESTAURANTE" Multiplicity="0..1" />
+          <End Type="Model.VALORACIONES" Role="VALORACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES_RESTAURANTE">
+              <PropertyRef Name="CODIGOPERSONA" />
+            </Principal>
+            <Dependent Role="VALORACIONES">
+              <PropertyRef Name="CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007586">
+          <End Type="Model.SEXOS" Role="SEXOS" Multiplicity="0..1" />
+          <End Type="Model.EMPLEADOS" Role="EMPLEADOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXOS">
+              <PropertyRef Name="CODIGOSEXO" />
+            </Principal>
+            <Dependent Role="EMPLEADOS">
+              <PropertyRef Name="SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007599">
+          <End Type="Model.EMPLEADOS" Role="EMPLEADOS" Multiplicity="0..1" />
+          <End Type="Model.ORDENES" Role="ORDENES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADOS">
+              <PropertyRef Name="CODIGOPERSONA" />
+            </Principal>
+            <Dependent Role="ORDENES">
+              <PropertyRef Name="MESERO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007627">
+          <End Type="Model.EMPLEADOS" Role="EMPLEADOS" Multiplicity="1" />
+          <End Type="Model.ORDENESEMPLEADOPLATOS" Role="ORDENESEMPLEADOPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADOS">
+              <PropertyRef Name="CODIGOPERSONA" />
+            </Principal>
+            <Dependent Role="ORDENESEMPLEADOPLATOS">
+              <PropertyRef Name="EMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007597">
+          <End Type="Model.ESTADOORDENES" Role="ESTADOORDENES" Multiplicity="0..1" />
+          <End Type="Model.ORDENES" Role="ORDENES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADOORDENES">
+              <PropertyRef Name="CODIGOESTADO" />
+            </Principal>
+            <Dependent Role="ORDENES">
+              <PropertyRef Name="ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007632">
+          <End Type="Model.ORDENES" Role="ORDENES" Multiplicity="0..1" />
+          <End Type="Model.FACTURAS" Role="FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="ORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007633">
+          <End Type="Model.TIPOSPAGOS" Role="TIPOSPAGOS" Multiplicity="0..1" />
+          <End Type="Model.FACTURAS" Role="FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOSPAGOS">
+              <PropertyRef Name="CODIGOTIPOPAGO" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="TIPOPAGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007608">
+          <End Type="Model.INGREDIENTES" Role="INGREDIENTES" Multiplicity="1" />
+          <End Type="Model.RECETASINGREDIENTES" Role="RECETASINGREDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INGREDIENTES">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="RECETASINGREDIENTES">
+              <PropertyRef Name="INGREDIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007648">
+          <End Type="Model.INVENTARIOS" Role="INVENTARIOS" Multiplicity="1" />
+          <End Type="Model.OBJETOSINVENTARIOS" Role="OBJETOSINVENTARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INVENTARIOS">
+              <PropertyRef Name="CODIGOINVENTARIO" />
+            </Principal>
+            <Dependent Role="OBJETOSINVENTARIOS">
+              <PropertyRef Name="INVENTARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007593">
+          <End Type="Model.MENUS" Role="MENUS" Multiplicity="1" />
+          <End Type="Model.PLATOSMENUS" Role="PLATOSMENUS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MENUS">
+              <PropertyRef Name="CODIGOMENU" />
+            </Principal>
+            <Dependent Role="PLATOSMENUS">
+              <PropertyRef Name="MENU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007647">
+          <End Type="Model.OBJETOS" Role="OBJETOS" Multiplicity="1" />
+          <End Type="Model.OBJETOSINVENTARIOS" Role="OBJETOSINVENTARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBJETOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="OBJETOSINVENTARIOS">
+              <PropertyRef Name="OBJETO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007598">
+          <End Type="Model.ORDENES" Role="ORDENES" Multiplicity="0..1" />
+          <End Type="Model.ORDENES" Role="ORDENES1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="ORDENES1">
+              <PropertyRef Name="SUBORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007602">
+          <End Type="Model.ORDENES" Role="ORDENES" Multiplicity="1" />
+          <End Type="Model.ORDENESPLATOS" Role="ORDENESPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="ORDENESPLATOS">
+              <PropertyRef Name="ORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007626">
+          <End Type="Model.ORDENES" Role="ORDENES" Multiplicity="1" />
+          <End Type="Model.ORDENESEMPLEADOPLATOS" Role="ORDENESEMPLEADOPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDENES">
+              <PropertyRef Name="CODIGOORDEN" />
+            </Principal>
+            <Dependent Role="ORDENESEMPLEADOPLATOS">
+              <PropertyRef Name="ORDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007628">
+          <End Type="Model.PLATOS" Role="PLATOS" Multiplicity="1" />
+          <End Type="Model.ORDENESEMPLEADOPLATOS" Role="ORDENESEMPLEADOPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="ORDENESEMPLEADOPLATOS">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007603">
+          <End Type="Model.PLATOS" Role="PLATOS" Multiplicity="1" />
+          <End Type="Model.ORDENESPLATOS" Role="ORDENESPLATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="ORDENESPLATOS">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007592">
+          <End Type="Model.PLATOS" Role="PLATOS" Multiplicity="1" />
+          <End Type="Model.PLATOSMENUS" Role="PLATOSMENUS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="PLATOSMENUS">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007605">
+          <End Type="Model.PLATOS" Role="PLATOS" Multiplicity="0..1" />
+          <End Type="Model.RECETAS" Role="RECETAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATOS">
+              <PropertyRef Name="CODIGOOBJETO" />
+            </Principal>
+            <Dependent Role="RECETAS">
+              <PropertyRef Name="PLATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007607">
+          <End Type="Model.RECETAS" Role="RECETAS" Multiplicity="1" />
+          <End Type="Model.RECETASINGREDIENTES" Role="RECETASINGREDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECETAS">
+              <PropertyRef Name="CODIGORECETA" />
+            </Principal>
+            <Dependent Role="RECETASINGREDIENTES">
+              <PropertyRef Name="RECETA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007609">
+          <End Type="Model.UNIDADES" Role="UNIDADES" Multiplicity="0..1" />
+          <End Type="Model.RECETASINGREDIENTES" Role="RECETASINGREDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UNIDADES">
+              <PropertyRef Name="CODIGOUNIDAD" />
+            </Principal>
+            <Dependent Role="RECETASINGREDIENTES">
+              <PropertyRef Name="UNIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DISTRIBUIDORACOMPANANTES">
+          <End Type="Model.DISTRIBUIDORES" Role="DISTRIBUIDORES" Multiplicity="*" />
+          <End Type="Model.ACOMPANANTES" Role="ACOMPANANTES" Multiplicity="*" />
+        </Association>
+        <Association Name="DISTRIBUIDORESINGREDIENTES">
+          <End Type="Model.DISTRIBUIDORES" Role="DISTRIBUIDORES" Multiplicity="*" />
+          <End Type="Model.INGREDIENTES" Role="INGREDIENTES" Multiplicity="*" />
+        </Association>
+        <Association Name="IMPUESTOSOBJETOS">
+          <End Type="Model.IMPUESTOS_RESTAURANTE" Role="IMPUESTOS_RESTAURANTE" Multiplicity="*" />
+          <End Type="Model.OBJETOS" Role="OBJETOS" Multiplicity="*" />
+        </Association>
+        <Association Name="MENUACOMPANANTES">
+          <End Type="Model.MENUS" Role="MENUS" Multiplicity="*" />
+          <End Type="Model.ACOMPANANTES" Role="ACOMPANANTES" Multiplicity="*" />
+        </Association>
+        <Association Name="ORDENESMESAS">
+          <End Type="Model.ORDENES" Role="ORDENES" Multiplicity="*" />
+          <End Type="Model.MESAS" Role="MESAS" Multiplicity="*" />
+        </Association>
+        <Association Name="PLATOSVALORACIONES">
+          <End Type="Model.PLATOS" Role="PLATOS" Multiplicity="*" />
+          <End Type="Model.VALORACIONES" Role="VALORACIONES" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="CARGOS">
+            <EntityTypeMapping TypeName="Model.CARGOS">
+              <MappingFragment StoreEntitySet="CARGOS">
+                <ScalarProperty Name="CODIGOCARGO" ColumnName="CODIGOCARGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DISTRIBUIDORES">
+            <EntityTypeMapping TypeName="Model.DISTRIBUIDORES">
+              <MappingFragment StoreEntitySet="DISTRIBUIDORES">
+                <ScalarProperty Name="RNC" ColumnName="RNC" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="CODIGODISTRIBUIDOR" ColumnName="CODIGODISTRIBUIDOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTADOORDENES">
+            <EntityTypeMapping TypeName="Model.ESTADOORDENES">
+              <MappingFragment StoreEntitySet="ESTADOORDENES">
+                <ScalarProperty Name="CODIGOESTADO" ColumnName="CODIGOESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACTURAS">
+            <EntityTypeMapping TypeName="Model.FACTURAS">
+              <MappingFragment StoreEntitySet="FACTURAS">
+                <ScalarProperty Name="SEGUNDO" ColumnName="SEGUNDO" />
+                <ScalarProperty Name="MINUTO" ColumnName="MINUTO" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="TIPOPAGO" ColumnName="TIPOPAGO" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+                <ScalarProperty Name="CODIGOFACTURA" ColumnName="CODIGOFACTURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMPUESTOS_RESTAURANTE">
+            <EntityTypeMapping TypeName="Model.IMPUESTOS_RESTAURANTE">
+              <MappingFragment StoreEntitySet="IMPUESTOS_RESTAURANTE">
+                <ScalarProperty Name="TARIFA" ColumnName="TARIFA" />
+                <ScalarProperty Name="CODIGOIMPUESTO" ColumnName="CODIGOIMPUESTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INVENTARIOS">
+            <EntityTypeMapping TypeName="Model.INVENTARIOS">
+              <MappingFragment StoreEntitySet="INVENTARIOS">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="CODIGOINVENTARIO" ColumnName="CODIGOINVENTARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MENUS">
+            <EntityTypeMapping TypeName="Model.MENUS">
+              <MappingFragment StoreEntitySet="MENUS">
+                <ScalarProperty Name="CODIGOMENU" ColumnName="CODIGOMENU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESAS">
+            <EntityTypeMapping TypeName="Model.MESAS">
+              <MappingFragment StoreEntitySet="MESAS">
+                <ScalarProperty Name="NUMEROMESAS" ColumnName="NUMEROMESAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBJETOS">
+            <EntityTypeMapping TypeName="IsTypeOf(Model.OBJETOS)">
+              <MappingFragment StoreEntitySet="OBJETOS">
+                <ScalarProperty Name="CODIGOOBJETO" ColumnName="CODIGOOBJETO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Model.ACOMPANANTES)">
+              <MappingFragment StoreEntitySet="ACOMPANANTES">
+                <ScalarProperty Name="CODIGOOBJETO" ColumnName="CODIGOACOMPANANTE" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Model.PLATOS)">
+              <MappingFragment StoreEntitySet="PLATOS">
+                <ScalarProperty Name="CODIGOOBJETO" ColumnName="CODIGOPLATO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="COSTOMANOFACTURA" ColumnName="COSTOMANOFACTURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Model.INGREDIENTES)">
+              <MappingFragment StoreEntitySet="INGREDIENTES">
+                <ScalarProperty Name="CODIGOOBJETO" ColumnName="CODIGOINGREDIENTE" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBJETOSINVENTARIOS">
+            <EntityTypeMapping TypeName="Model.OBJETOSINVENTARIOS">
+              <MappingFragment StoreEntitySet="OBJETOSINVENTARIOS">
+                <ScalarProperty Name="UNIDADES" ColumnName="UNIDADES" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="INVENTARIO" ColumnName="INVENTARIO" />
+                <ScalarProperty Name="OBJETO" ColumnName="OBJETO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDENES">
+            <EntityTypeMapping TypeName="Model.ORDENES">
+              <MappingFragment StoreEntitySet="ORDENES">
+                <ScalarProperty Name="MESERO" ColumnName="MESERO" />
+                <ScalarProperty Name="SUBORDEN" ColumnName="SUBORDEN" />
+                <ScalarProperty Name="SEGUNDO" ColumnName="SEGUNDO" />
+                <ScalarProperty Name="MINUTO" ColumnName="MINUTO" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="COSTOTOTAL" ColumnName="COSTOTOTAL" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+                <ScalarProperty Name="CODIGOORDEN" ColumnName="CODIGOORDEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDENESEMPLEADOPLATOS">
+            <EntityTypeMapping TypeName="Model.ORDENESEMPLEADOPLATOS">
+              <MappingFragment StoreEntitySet="ORDENESEMPLEADOPLATOS">
+                <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+                <ScalarProperty Name="PLATO" ColumnName="PLATO" />
+                <ScalarProperty Name="EMPLEADO" ColumnName="EMPLEADO" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDENESPLATOS">
+            <EntityTypeMapping TypeName="Model.ORDENESPLATOS">
+              <MappingFragment StoreEntitySet="ORDENESPLATOS">
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="PLATO" ColumnName="PLATO" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONAS">
+            <EntityTypeMapping TypeName="IsTypeOf(Model.PERSONAS)">
+              <MappingFragment StoreEntitySet="PERSONAS">
+                <ScalarProperty Name="CODIGOPERSONA" ColumnName="CODIGOPERSONA" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="DOCUMENTOIDENTIDAD" ColumnName="DOCUMENTOIDENTIDAD" />
+                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Model.EMPLEADOS)">
+              <MappingFragment StoreEntitySet="EMPLEADOS">
+                <ScalarProperty Name="CODIGOPERSONA" ColumnName="CODIGOEMPLEADO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Model.CLIENTES_RESTAURANTE)">
+              <MappingFragment StoreEntitySet="CLIENTES_RESTAURANTE">
+                <ScalarProperty Name="CODIGOPERSONA" ColumnName="CODIGOCLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PLATOSMENUS">
+            <EntityTypeMapping TypeName="Model.PLATOSMENUS">
+              <MappingFragment StoreEntitySet="PLATOSMENUS">
+                <ScalarProperty Name="PRECIOPLATO" ColumnName="PRECIOPLATO" />
+                <ScalarProperty Name="MENU" ColumnName="MENU" />
+                <ScalarProperty Name="PLATO" ColumnName="PLATO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECETAS">
+            <EntityTypeMapping TypeName="Model.RECETAS">
+              <MappingFragment StoreEntitySet="RECETAS">
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="PLATO" ColumnName="PLATO" />
+                <ScalarProperty Name="CODIGORECETA" ColumnName="CODIGORECETA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECETASINGREDIENTES">
+            <EntityTypeMapping TypeName="Model.RECETASINGREDIENTES">
+              <MappingFragment StoreEntitySet="RECETASINGREDIENTES">
+                <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="INGREDIENTE" ColumnName="INGREDIENTE" />
+                <ScalarProperty Name="RECETA" ColumnName="RECETA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEXOS">
+            <EntityTypeMapping TypeName="Model.SEXOS">
+              <MappingFragment StoreEntitySet="SEXOS">
+                <ScalarProperty Name="CODIGOSEXO" ColumnName="CODIGOSEXO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOSPAGOS">
+            <EntityTypeMapping TypeName="Model.TIPOSPAGOS">
+              <MappingFragment StoreEntitySet="TIPOSPAGOS">
+                <ScalarProperty Name="CODIGOTIPOPAGO" ColumnName="CODIGOTIPOPAGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UNIDADES">
+            <EntityTypeMapping TypeName="Model.UNIDADES">
+              <MappingFragment StoreEntitySet="UNIDADES">
+                <ScalarProperty Name="CODIGOUNIDAD" ColumnName="CODIGOUNIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VALORACIONES">
+            <EntityTypeMapping TypeName="Model.VALORACIONES">
+              <MappingFragment StoreEntitySet="VALORACIONES">
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+                <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="CODIGOVALORACION" ColumnName="CODIGOVALORACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="IMPUESTOSOBJETOS" TypeName="Model.IMPUESTOSOBJETOS" StoreEntitySet="IMPUESTOSOBJETOS">
+            <EndProperty Name="OBJETOS">
+              <ScalarProperty Name="CODIGOOBJETO" ColumnName="OBJETO" />
+            </EndProperty>
+            <EndProperty Name="IMPUESTOS_RESTAURANTE">
+              <ScalarProperty Name="CODIGOIMPUESTO" ColumnName="IMPUESTO" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ORDENESMESAS" TypeName="Model.ORDENESMESAS" StoreEntitySet="ORDENESMESAS">
+            <EndProperty Name="MESAS">
+              <ScalarProperty Name="NUMEROMESAS" ColumnName="MESA" />
+            </EndProperty>
+            <EndProperty Name="ORDENES">
+              <ScalarProperty Name="CODIGOORDEN" ColumnName="ORDEN" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DISTRIBUIDORACOMPANANTES" TypeName="Model.DISTRIBUIDORACOMPANANTES" StoreEntitySet="DISTRIBUIDORACOMPANANTES" >
+            <EndProperty Name="ACOMPANANTES">
+              <ScalarProperty Name="CODIGOOBJETO" ColumnName="ACOMPANANTE" />
+            </EndProperty>
+            <EndProperty Name="DISTRIBUIDORES">
+              <ScalarProperty Name="CODIGODISTRIBUIDOR" ColumnName="DISTRIBUIDOR" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="MENUACOMPANANTES" TypeName="Model.MENUACOMPANANTES" StoreEntitySet="MENUACOMPANANTES" >
+            <EndProperty Name="ACOMPANANTES">
+              <ScalarProperty Name="CODIGOOBJETO" ColumnName="ACOMPANANTE" />
+            </EndProperty>
+            <EndProperty Name="MENUS">
+              <ScalarProperty Name="CODIGOMENU" ColumnName="MENU" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PLATOSVALORACIONES" TypeName="Model.PLATOSVALORACIONES" StoreEntitySet="PLATOSVALORACIONES" >
+            <EndProperty Name="VALORACIONES">
+              <ScalarProperty Name="CODIGOVALORACION" ColumnName="VALORACION" />
+            </EndProperty>
+            <EndProperty Name="PLATOS">
+              <ScalarProperty Name="CODIGOOBJETO" ColumnName="PLATO" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DISTRIBUIDORESINGREDIENTES" TypeName="Model.DISTRIBUIDORESINGREDIENTES" StoreEntitySet="DISTRIBUIDORESINGREDIENTES" >
+            <EndProperty Name="INGREDIENTES">
+              <ScalarProperty Name="CODIGOOBJETO" ColumnName="INGREDIENTE" />
+            </EndProperty>
+            <EndProperty Name="DISTRIBUIDORES">
+              <ScalarProperty Name="CODIGODISTRIBUIDOR" ColumnName="DISTRIBUIDOR" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

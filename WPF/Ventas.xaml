@@ -1,0 +1,115 @@
+﻿<Window x:Class="WPF.Ventas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="Restaurante Panchita Feliz - Ventas" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+                <Button>Ventas</Button>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="administracion,ventas">Administración</Button>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="cocina,ventas">Cocina</Button>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="inventario,ventas">Inventario</Button>
+            </WrapPanel>
+            <TabControl TabStripPlacement="Left">
+                <TabItem Header="Ordenes">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">ORDENES PENDIENTES</Label>
+                            <WrapPanel>
+                                <ListView ItemsSource="{Binding ListadoOrdenes}" SelectedItem="{Binding OrdenActual}">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn DisplayMemberBinding="{Binding CODIGOORDEN}" Header="#Orden"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding CLIENTE}" Header="#Cliente"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding ESTADO}" Header="#Estado"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding COSTOTOTAL}" Header="Costo total"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding FECHA}" Header="Fecha"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding HORA}" Header="Hora"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding MINUTO}" Header="Minuto"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding SEGUNDO}" Header="Segundo"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding SUBORDEN}" Header="#SubOrden"/>
+                                            <GridViewColumn DisplayMemberBinding="{Binding MESERO}" Header="#Mesero"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </WrapPanel>
+                            <Label Content="Nueva Orden"/>
+                            <WrapPanel>
+                                <Label Content="#Orden"/>
+                                <TextBox Text="{Binding NuevaOrden.CODIGOORDEN}"/>
+                                <Label Content="#Cliente"/>
+                                <TextBox Text="{Binding NuevaOrden.CLIENTE}"/>
+                                <Label Content="#Estado"/>
+                                <TextBox Text="{Binding NuevaOrden.ESTADO}"/>
+                                <Label Content="Costo total"/>
+                                <TextBox Text="{Binding NuevaOrden.COSTOTOTAL}"/>
+                                <Label Content="Fecha"/>
+                                <TextBox Text="{Binding NuevaOrden.FECHA}"/>
+                                <Label Content="Hora"/>
+                                <TextBox Text="{Binding NuevaOrden.HORA}"/>
+                                <Label Content="Minuto"/>
+                                <TextBox Text="{Binding NuevaOrden.MINUTO}"/>
+                                <Label Content="Segundo"/>
+                                <TextBox Text="{Binding NuevaOrden.SEGUNDO}"/>
+                                <Label Content="#Suborden"/>
+                                <TextBox Text="{Binding NuevaOrden.SUBORDEN}"/>
+                                <Label Content="#Mesero"/>
+                                <TextBox Text="{Binding NuevaOrden.MESERO}"/>
+                                <Button Content="+" Command="{Binding GuardarNuevaOrdenCommand}"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Facturar orden">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">FACTURAR ORDEN</Label>
+                            <Label Content="Nueva Factura"/>
+                            <WrapPanel>
+                                <Label Content="#Orden"/>
+                                <TextBox Text="{Binding NuevaOrden.CODIGOORDEN}"/>
+                                <Label Content="#Cliente"/>
+                                <TextBox Text="{Binding NuevaOrden.CLIENTE}"/>
+                                <Label Content="#Estado"/>
+                                <TextBox Text="{Binding NuevaOrden.ESTADO}"/>
+                                <Label Content="Costo total"/>
+                                <TextBox Text="{Binding NuevaOrden.COSTOTOTAL}"/>
+                                <Label Content="Fecha"/>
+                                <TextBox Text="{Binding NuevaOrden.FECHA}"/>
+                                <Label Content="Hora"/>
+                                <TextBox Text="{Binding NuevaOrden.HORA}"/>
+                                <Label Content="Minuto"/>
+                                <TextBox Text="{Binding NuevaOrden.MINUTO}"/>
+                                <Label Content="Segundo"/>
+                                <TextBox Text="{Binding NuevaOrden.SEGUNDO}"/>
+                                <Label Content="#Suborden"/>
+                                <TextBox Text="{Binding NuevaOrden.SUBORDEN}"/>
+                                <Label Content="#Mesero"/>
+                                <TextBox Text="{Binding NuevaOrden.MESERO}"/>
+                                <Button Content="+" Command="{Binding GuardarNuevaOrdenCommand}"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Facturas expedidas">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">Facturas expedidas</Label>
+                            <ListView ItemsSource="{Binding ListadoFacturas}" SelectedItem="{Binding FacturaActual}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </Grid>
+</Window>

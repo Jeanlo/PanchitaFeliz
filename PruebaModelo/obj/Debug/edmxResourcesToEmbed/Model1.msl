@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="CARGOS">
+      <EntityTypeMapping TypeName="Model.CARGOS">
+        <MappingFragment StoreEntitySet="CARGOS">
+          <ScalarProperty Name="CODIGOCARGO" ColumnName="CODIGOCARGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DISTRIBUIDORES">
+      <EntityTypeMapping TypeName="Model.DISTRIBUIDORES">
+        <MappingFragment StoreEntitySet="DISTRIBUIDORES">
+          <ScalarProperty Name="RNC" ColumnName="RNC" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CODIGODISTRIBUIDOR" ColumnName="CODIGODISTRIBUIDOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTADOORDENES">
+      <EntityTypeMapping TypeName="Model.ESTADOORDENES">
+        <MappingFragment StoreEntitySet="ESTADOORDENES">
+          <ScalarProperty Name="CODIGOESTADO" ColumnName="CODIGOESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURAS">
+      <EntityTypeMapping TypeName="Model.FACTURAS">
+        <MappingFragment StoreEntitySet="FACTURAS">
+          <ScalarProperty Name="SEGUNDO" ColumnName="SEGUNDO" />
+          <ScalarProperty Name="MINUTO" ColumnName="MINUTO" />
+          <ScalarProperty Name="HORA" ColumnName="HORA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="TIPOPAGO" ColumnName="TIPOPAGO" />
+          <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+          <ScalarProperty Name="CODIGOFACTURA" ColumnName="CODIGOFACTURA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMPUESTOS_RESTAURANTE">
+      <EntityTypeMapping TypeName="Model.IMPUESTOS_RESTAURANTE">
+        <MappingFragment StoreEntitySet="IMPUESTOS_RESTAURANTE">
+          <ScalarProperty Name="TARIFA" ColumnName="TARIFA" />
+          <ScalarProperty Name="CODIGOIMPUESTO" ColumnName="CODIGOIMPUESTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVENTARIOS">
+      <EntityTypeMapping TypeName="Model.INVENTARIOS">
+        <MappingFragment StoreEntitySet="INVENTARIOS">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CODIGOINVENTARIO" ColumnName="CODIGOINVENTARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENUS">
+      <EntityTypeMapping TypeName="Model.MENUS">
+        <MappingFragment StoreEntitySet="MENUS">
+          <ScalarProperty Name="CODIGOMENU" ColumnName="CODIGOMENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESAS">
+      <EntityTypeMapping TypeName="Model.MESAS">
+        <MappingFragment StoreEntitySet="MESAS">
+          <ScalarProperty Name="NUMEROMESAS" ColumnName="NUMEROMESAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OBJETOS">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.OBJETOS)">
+        <MappingFragment StoreEntitySet="OBJETOS">
+          <ScalarProperty Name="CODIGOOBJETO" ColumnName="CODIGOOBJETO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model.ACOMPANANTES)">
+        <MappingFragment StoreEntitySet="ACOMPANANTES">
+          <ScalarProperty Name="CODIGOOBJETO" ColumnName="CODIGOACOMPANANTE" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model.PLATOS)">
+        <MappingFragment StoreEntitySet="PLATOS">
+          <ScalarProperty Name="CODIGOOBJETO" ColumnName="CODIGOPLATO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="COSTOMANOFACTURA" ColumnName="COSTOMANOFACTURA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model.INGREDIENTES)">
+        <MappingFragment StoreEntitySet="INGREDIENTES">
+          <ScalarProperty Name="CODIGOOBJETO" ColumnName="CODIGOINGREDIENTE" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OBJETOSINVENTARIOS">
+      <EntityTypeMapping TypeName="Model.OBJETOSINVENTARIOS">
+        <MappingFragment StoreEntitySet="OBJETOSINVENTARIOS">
+          <ScalarProperty Name="UNIDADES" ColumnName="UNIDADES" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="INVENTARIO" ColumnName="INVENTARIO" />
+          <ScalarProperty Name="OBJETO" ColumnName="OBJETO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDENES">
+      <EntityTypeMapping TypeName="Model.ORDENES">
+        <MappingFragment StoreEntitySet="ORDENES">
+          <ScalarProperty Name="MESERO" ColumnName="MESERO" />
+          <ScalarProperty Name="SUBORDEN" ColumnName="SUBORDEN" />
+          <ScalarProperty Name="SEGUNDO" ColumnName="SEGUNDO" />
+          <ScalarProperty Name="MINUTO" ColumnName="MINUTO" />
+          <ScalarProperty Name="HORA" ColumnName="HORA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="COSTOTOTAL" ColumnName="COSTOTOTAL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+          <ScalarProperty Name="CODIGOORDEN" ColumnName="CODIGOORDEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDENESEMPLEADOPLATOS">
+      <EntityTypeMapping TypeName="Model.ORDENESEMPLEADOPLATOS">
+        <MappingFragment StoreEntitySet="ORDENESEMPLEADOPLATOS">
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+          <ScalarProperty Name="PLATO" ColumnName="PLATO" />
+          <ScalarProperty Name="EMPLEADO" ColumnName="EMPLEADO" />
+          <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDENESPLATOS">
+      <EntityTypeMapping TypeName="Model.ORDENESPLATOS">
+        <MappingFragment StoreEntitySet="ORDENESPLATOS">
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="PLATO" ColumnName="PLATO" />
+          <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSONAS">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.PERSONAS)">
+        <MappingFragment StoreEntitySet="PERSONAS">
+          <ScalarProperty Name="CODIGOPERSONA" ColumnName="CODIGOPERSONA" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DOCUMENTOIDENTIDAD" ColumnName="DOCUMENTOIDENTIDAD" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model.EMPLEADOS)">
+        <MappingFragment StoreEntitySet="EMPLEADOS">
+          <ScalarProperty Name="CODIGOPERSONA" ColumnName="CODIGOEMPLEADO" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model.CLIENTES_RESTAURANTE)">
+        <MappingFragment StoreEntitySet="CLIENTES_RESTAURANTE">
+          <ScalarProperty Name="CODIGOPERSONA" ColumnName="CODIGOCLIENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLATOSMENUS">
+      <EntityTypeMapping TypeName="Model.PLATOSMENUS">
+        <MappingFragment StoreEntitySet="PLATOSMENUS">
+          <ScalarProperty Name="PRECIOPLATO" ColumnName="PRECIOPLATO" />
+          <ScalarProperty Name="MENU" ColumnName="MENU" />
+          <ScalarProperty Name="PLATO" ColumnName="PLATO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECETAS">
+      <EntityTypeMapping TypeName="Model.RECETAS">
+        <MappingFragment StoreEntitySet="RECETAS">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PLATO" ColumnName="PLATO" />
+          <ScalarProperty Name="CODIGORECETA" ColumnName="CODIGORECETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECETASINGREDIENTES">
+      <EntityTypeMapping TypeName="Model.RECETASINGREDIENTES">
+        <MappingFragment StoreEntitySet="RECETASINGREDIENTES">
+          <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="INGREDIENTE" ColumnName="INGREDIENTE" />
+          <ScalarProperty Name="RECETA" ColumnName="RECETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEXOS">
+      <EntityTypeMapping TypeName="Model.SEXOS">
+        <MappingFragment StoreEntitySet="SEXOS">
+          <ScalarProperty Name="CODIGOSEXO" ColumnName="CODIGOSEXO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOSPAGOS">
+      <EntityTypeMapping TypeName="Model.TIPOSPAGOS">
+        <MappingFragment StoreEntitySet="TIPOSPAGOS">
+          <ScalarProperty Name="CODIGOTIPOPAGO" ColumnName="CODIGOTIPOPAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UNIDADES">
+      <EntityTypeMapping TypeName="Model.UNIDADES">
+        <MappingFragment StoreEntitySet="UNIDADES">
+          <ScalarProperty Name="CODIGOUNIDAD" ColumnName="CODIGOUNIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VALORACIONES">
+      <EntityTypeMapping TypeName="Model.VALORACIONES">
+        <MappingFragment StoreEntitySet="VALORACIONES">
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="CODIGOVALORACION" ColumnName="CODIGOVALORACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="IMPUESTOSOBJETOS" TypeName="Model.IMPUESTOSOBJETOS" StoreEntitySet="IMPUESTOSOBJETOS">
+      <EndProperty Name="OBJETOS">
+        <ScalarProperty Name="CODIGOOBJETO" ColumnName="OBJETO" />
+      </EndProperty>
+      <EndProperty Name="IMPUESTOS_RESTAURANTE">
+        <ScalarProperty Name="CODIGOIMPUESTO" ColumnName="IMPUESTO" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ORDENESMESAS" TypeName="Model.ORDENESMESAS" StoreEntitySet="ORDENESMESAS">
+      <EndProperty Name="MESAS">
+        <ScalarProperty Name="NUMEROMESAS" ColumnName="MESA" />
+      </EndProperty>
+      <EndProperty Name="ORDENES">
+        <ScalarProperty Name="CODIGOORDEN" ColumnName="ORDEN" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DISTRIBUIDORACOMPANANTES" TypeName="Model.DISTRIBUIDORACOMPANANTES" StoreEntitySet="DISTRIBUIDORACOMPANANTES">
+      <EndProperty Name="ACOMPANANTES">
+        <ScalarProperty Name="CODIGOOBJETO" ColumnName="ACOMPANANTE" />
+      </EndProperty>
+      <EndProperty Name="DISTRIBUIDORES">
+        <ScalarProperty Name="CODIGODISTRIBUIDOR" ColumnName="DISTRIBUIDOR" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MENUACOMPANANTES" TypeName="Model.MENUACOMPANANTES" StoreEntitySet="MENUACOMPANANTES">
+      <EndProperty Name="ACOMPANANTES">
+        <ScalarProperty Name="CODIGOOBJETO" ColumnName="ACOMPANANTE" />
+      </EndProperty>
+      <EndProperty Name="MENUS">
+        <ScalarProperty Name="CODIGOMENU" ColumnName="MENU" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PLATOSVALORACIONES" TypeName="Model.PLATOSVALORACIONES" StoreEntitySet="PLATOSVALORACIONES">
+      <EndProperty Name="VALORACIONES">
+        <ScalarProperty Name="CODIGOVALORACION" ColumnName="VALORACION" />
+      </EndProperty>
+      <EndProperty Name="PLATOS">
+        <ScalarProperty Name="CODIGOOBJETO" ColumnName="PLATO" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DISTRIBUIDORESINGREDIENTES" TypeName="Model.DISTRIBUIDORESINGREDIENTES" StoreEntitySet="DISTRIBUIDORESINGREDIENTES">
+      <EndProperty Name="INGREDIENTES">
+        <ScalarProperty Name="CODIGOOBJETO" ColumnName="INGREDIENTE" />
+      </EndProperty>
+      <EndProperty Name="DISTRIBUIDORES">
+        <ScalarProperty Name="CODIGODISTRIBUIDOR" ColumnName="DISTRIBUIDOR" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

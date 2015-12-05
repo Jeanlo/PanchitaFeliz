@@ -1,0 +1,198 @@
+﻿<Window x:Class="WPF.Administracion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="Restaurante Panchita Feliz - Administración" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="ventas,administracion">Ventas</Button>
+                <Button>Administración</Button>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="cocina,administracion">Cocina</Button>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="inventario,administracion">Inventario</Button>
+            </WrapPanel>
+            <TabControl TabStripPlacement="Left">
+                <TabItem Header="Mesas">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">MESAS</Label>
+                            <ListView ItemsSource="{Binding ListadoMesas}" SelectedItem="{Binding MesaActual}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn DisplayMemberBinding="{Binding NUMEROMESAS}" Header="#Mesa"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <Label Content="Nueva Mesa:"/>
+                            <WrapPanel>
+                                <Label Content="#"/>
+                                <TextBox Text="{Binding NuevaMesa.NUMEROMESAS}"/>
+                                <Button Content="+" Command="{Binding GuardarNuevaMesaCommand}"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Empleados">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">EMPLEADOS</Label>
+                            <ListView ItemsSource="{Binding ListadoEmpleados}" SelectedItem="{Binding EmpleadoActual}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn DisplayMemberBinding="{Binding NOMBRE}" Header="Nombre"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding APELLIDO}" Header="Apellido"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding CARGO}" Header="Cargo"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding SEXO}" Header="Sexo"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding DOCUMENTOIDENTIDAD}" Header="Documento de identidad"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding TELEFONO}" Header="Telefono"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <Label Content="Nuevo Empleado:"/>
+                            <WrapPanel>
+                                <Label Content="#"/>
+                                <TextBox Text="{Binding NuevoEmpleado.CODIGOPERSONA}"/>
+                                <Label Content="Nombre"/>
+                                <TextBox Text="{Binding NuevoEmpleado.NOMBRE}"/>
+                                <Label Content="Apellido"/>
+                                <TextBox Text="{Binding NuevoEmpleado.APELLIDO}"/>
+                                <Label Content="Cargo"/>
+                                <TextBox Text="{Binding NuevoEmpleado.CARGO}"/>
+                                <Label Content="Sexo"/>
+                                <TextBox Text="{Binding NuevoEmpleado.SEXO}"/>
+                                <Label Content="Documento de identidad"/>
+                                <TextBox Text="{Binding NuevoEmpleado.DOCUMENTOIDENTIDAD}"/>
+                                <Label Content="Telefono"/>
+                                <TextBox Text="{Binding NuevoEmpleado.TELEFONO}"/>
+                                <Button Content="+" Command="{Binding GuardarNuevoEmpleadoCommand}"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Clientes">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">CLIENTES</Label>
+                            <ListView ItemsSource="{Binding ListadoClientes}" SelectedItem="{Binding ClienteActual}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn DisplayMemberBinding="{Binding NOMBRE}" Header="Nombre"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding APELLIDO}" Header="Apellido"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding DOCUMENTOIDENTIDAD}" Header="Documento de identidad"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding TELEFONO}" Header="Telefono"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <Label Content="Nuevo Cliente:"/>
+                            <WrapPanel>
+                                <Label Content="#"/>
+                                <TextBox Text="{Binding NuevoCliente.CODIGOPERSONA}"/>
+                                <Label Content="Nombre"/>
+                                <TextBox Text="{Binding NuevoCliente.NOMBRE}"/>
+                                <Label Content="Apellido"/>
+                                <TextBox Text="{Binding NuevoCliente.APELLIDO}"/>
+                                <Label Content="Documento de identidad"/>
+                                <TextBox Text="{Binding NuevoCliente.DOCUMENTOIDENTIDAD}"/>
+                                <Label Content="Telefono"/>
+                                <TextBox Text="{Binding NuevoCliente.TELEFONO}"/>
+                                <Button Content="+" Command="{Binding GuardarNuevoClienteCommand}"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Tipos">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">TIPOS</Label>
+                            <WrapPanel>
+                                <StackPanel>
+                                    <Label Content="Sexos"/>
+                                    <ListView ItemsSource="{Binding ListadoSexos}" SelectedItem="{Binding SexoActual}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn DisplayMemberBinding="{Binding CODIGOSEXO}" Header="#Sexo"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                    <Label Content="Nuevo Sexo:"/>
+                                    <WrapPanel>
+                                        <Label Content="#"/>
+                                        <TextBox Text="{Binding NuevoSexo.CODIGOSEXO}"/>
+                                        <Button Content="+" Command="{Binding GuardarNuevoSexoCommand}"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="Cargos"/>
+                                    <ListView ItemsSource="{Binding ListadoCargos}" SelectedItem="{Binding CargoActual}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn DisplayMemberBinding="{Binding CODIGOCARGO}" Header="#Cargo"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                    <Label Content="Nuevo Cargo:"/>
+                                    <WrapPanel>
+                                        <Label Content="#"/>
+                                        <TextBox Text="{Binding NuevoCargo.CODIGOCARGO}"/>
+                                        <Button Content="+" Command="{Binding GuardarNuevoCargoCommand}"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="Unidades"/>
+                                    <ListView ItemsSource="{Binding ListadoUnidades}" SelectedItem="{Binding UnidadActual}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn DisplayMemberBinding="{Binding CODIGOUNIDAD}" Header="#Unidad"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                    <Label Content="Nueva Unidad:"/>
+                                    <WrapPanel>
+                                        <Label Content="#"/>
+                                        <TextBox Text="{Binding NuevaUnidad.CODIGOUNIDAD}"/>
+                                        <Button Content="+" Command="{Binding GuardarNuevaUnidadCommand}"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="Estados de orden"/>
+                                    <ListView ItemsSource="{Binding ListadoEstados}" SelectedItem="{Binding EstadoActual}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn DisplayMemberBinding="{Binding CODIGOESTADO}" Header="#Estado"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                    <Label Content="Nuevo Estado:"/>
+                                    <WrapPanel>
+                                        <Label Content="#"/>
+                                        <TextBox Text="{Binding NuevoEstado.CODIGOESTADO}"/>
+                                        <Button Content="+" Command="{Binding GuardarNuevoEstadoCommand}"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="Tipos de pago"/>
+                                    <ListView ItemsSource="{Binding ListadoTiposPago}" SelectedItem="{Binding TipoPagoActual}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn DisplayMemberBinding="{Binding CODIGOTIPOPAGO}" Header="#Tipo de Pago"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                    <Label Content="Nuevo Tipo de Pago:"/>
+                                    <WrapPanel>
+                                        <Label Content="#"/>
+                                        <TextBox Text="{Binding NuevoTipoPago.CODIGOTIPOPAGO}"/>
+                                        <Button Content="+" Command="{Binding GuardarNuevoTipoPagoCommand}"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PruebaModelo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PruebaModelo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPERSONAS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PERSONAS" nillable="true" type="tns:PERSONAS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPERSONAS" nillable="true" type="tns:ArrayOfPERSONAS" />
+  <xs:complexType name="PERSONAS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGOPERSONA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DOCUMENTOIDENTIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PERSONAS" nillable="true" type="tns:PERSONAS" />
+  <xs:complexType name="ArrayOfFACTURAS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FACTURAS" nillable="true" type="tns:FACTURAS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFACTURAS" nillable="true" type="tns:ArrayOfFACTURAS" />
+  <xs:complexType name="FACTURAS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOFACTURA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FECHA" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HORA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MINUTO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORDEN" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORDENES" nillable="true" type="tns:ORDENES" />
+      <xs:element minOccurs="0" name="SEGUNDO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TIPOPAGO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TIPOSPAGOS" nillable="true" type="tns:TIPOSPAGOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FACTURAS" nillable="true" type="tns:FACTURAS" />
+  <xs:complexType name="ORDENES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CLIENTES_RESTAURANTE" nillable="true" type="tns:CLIENTES_RESTAURANTE" />
+      <xs:element minOccurs="0" name="CODIGOORDEN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="COSTOTOTAL" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EMPLEADOS" nillable="true" type="tns:EMPLEADOS" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ESTADOORDENES" nillable="true" type="tns:ESTADOORDENES" />
+      <xs:element minOccurs="0" name="FACTURAS" nillable="true" type="tns:ArrayOfFACTURAS" />
+      <xs:element minOccurs="0" name="FECHA" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HORA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MESAS" nillable="true" type="tns:ArrayOfMESAS" />
+      <xs:element minOccurs="0" name="MESERO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MINUTO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORDENES1" nillable="true" type="tns:ArrayOfORDENES" />
+      <xs:element minOccurs="0" name="ORDENES2" nillable="true" type="tns:ORDENES" />
+      <xs:element minOccurs="0" name="ORDENESEMPLEADOPLATOS" nillable="true" type="tns:ArrayOfORDENESEMPLEADOPLATOS" />
+      <xs:element minOccurs="0" name="ORDENESPLATOS" nillable="true" type="tns:ArrayOfORDENESPLATOS" />
+      <xs:element minOccurs="0" name="SEGUNDO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SUBORDEN" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ORDENES" nillable="true" type="tns:ORDENES" />
+  <xs:complexType name="CLIENTES_RESTAURANTE">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PERSONAS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ORDENES" nillable="true" type="tns:ArrayOfORDENES" />
+          <xs:element minOccurs="0" name="VALORACIONES" nillable="true" type="tns:ArrayOfVALORACIONES" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CLIENTES_RESTAURANTE" nillable="true" type="tns:CLIENTES_RESTAURANTE" />
+  <xs:complexType name="ArrayOfORDENES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ORDENES" nillable="true" type="tns:ORDENES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfORDENES" nillable="true" type="tns:ArrayOfORDENES" />
+  <xs:complexType name="ArrayOfVALORACIONES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VALORACIONES" nillable="true" type="tns:VALORACIONES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVALORACIONES" nillable="true" type="tns:ArrayOfVALORACIONES" />
+  <xs:complexType name="VALORACIONES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CLIENTES_RESTAURANTE" nillable="true" type="tns:CLIENTES_RESTAURANTE" />
+      <xs:element minOccurs="0" name="CODIGOVALORACION" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FECHA" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NUMERO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PLATOS" nillable="true" type="tns:ArrayOfPLATOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VALORACIONES" nillable="true" type="tns:VALORACIONES" />
+  <xs:complexType name="ArrayOfPLATOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PLATOS" nillable="true" type="tns:PLATOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPLATOS" nillable="true" type="tns:ArrayOfPLATOS" />
+  <xs:complexType name="PLATOS">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OBJETOS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="COSTOMANOFACTURA" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ORDENESEMPLEADOPLATOS" nillable="true" type="tns:ArrayOfORDENESEMPLEADOPLATOS" />
+          <xs:element minOccurs="0" name="ORDENESPLATOS" nillable="true" type="tns:ArrayOfORDENESPLATOS" />
+          <xs:element minOccurs="0" name="PLATOSMENUS" nillable="true" type="tns:ArrayOfPLATOSMENUS" />
+          <xs:element minOccurs="0" name="RECETAS" nillable="true" type="tns:ArrayOfRECETAS" />
+          <xs:element minOccurs="0" name="VALORACIONES" nillable="true" type="tns:ArrayOfVALORACIONES" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PLATOS" nillable="true" type="tns:PLATOS" />
+  <xs:complexType name="OBJETOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOOBJETO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IMPUESTOS_RESTAURANTE" nillable="true" type="tns:ArrayOfIMPUESTOS_RESTAURANTE" />
+      <xs:element minOccurs="0" name="OBJETOSINVENTARIOS" nillable="true" type="tns:ArrayOfOBJETOSINVENTARIOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OBJETOS" nillable="true" type="tns:OBJETOS" />
+  <xs:complexType name="ArrayOfIMPUESTOS_RESTAURANTE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IMPUESTOS_RESTAURANTE" nillable="true" type="tns:IMPUESTOS_RESTAURANTE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIMPUESTOS_RESTAURANTE" nillable="true" type="tns:ArrayOfIMPUESTOS_RESTAURANTE" />
+  <xs:complexType name="IMPUESTOS_RESTAURANTE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOIMPUESTO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OBJETOS" nillable="true" type="tns:ArrayOfOBJETOS" />
+      <xs:element minOccurs="0" name="TARIFA" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IMPUESTOS_RESTAURANTE" nillable="true" type="tns:IMPUESTOS_RESTAURANTE" />
+  <xs:complexType name="ArrayOfOBJETOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OBJETOS" nillable="true" type="tns:OBJETOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOBJETOS" nillable="true" type="tns:ArrayOfOBJETOS" />
+  <xs:complexType name="ArrayOfOBJETOSINVENTARIOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OBJETOSINVENTARIOS" nillable="true" type="tns:OBJETOSINVENTARIOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOBJETOSINVENTARIOS" nillable="true" type="tns:ArrayOfOBJETOSINVENTARIOS" />
+  <xs:complexType name="OBJETOSINVENTARIOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CANTIDAD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="INVENTARIO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="INVENTARIOS" nillable="true" type="tns:INVENTARIOS" />
+      <xs:element minOccurs="0" name="OBJETO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OBJETOS" nillable="true" type="tns:OBJETOS" />
+      <xs:element minOccurs="0" name="UNIDADES" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OBJETOSINVENTARIOS" nillable="true" type="tns:OBJETOSINVENTARIOS" />
+  <xs:complexType name="INVENTARIOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOINVENTARIO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OBJETOSINVENTARIOS" nillable="true" type="tns:ArrayOfOBJETOSINVENTARIOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="INVENTARIOS" nillable="true" type="tns:INVENTARIOS" />
+  <xs:complexType name="ArrayOfORDENESEMPLEADOPLATOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ORDENESEMPLEADOPLATOS" nillable="true" type="tns:ORDENESEMPLEADOPLATOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfORDENESEMPLEADOPLATOS" nillable="true" type="tns:ArrayOfORDENESEMPLEADOPLATOS" />
+  <xs:complexType name="ORDENESEMPLEADOPLATOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CARGO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CARGOS" nillable="true" type="tns:CARGOS" />
+      <xs:element minOccurs="0" name="EMPLEADO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EMPLEADOS" nillable="true" type="tns:EMPLEADOS" />
+      <xs:element minOccurs="0" name="ORDEN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORDENES" nillable="true" type="tns:ORDENES" />
+      <xs:element minOccurs="0" name="PLATO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PLATOS" nillable="true" type="tns:PLATOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ORDENESEMPLEADOPLATOS" nillable="true" type="tns:ORDENESEMPLEADOPLATOS" />
+  <xs:complexType name="CARGOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOCARGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EMPLEADOS" nillable="true" type="tns:ArrayOfEMPLEADOS" />
+      <xs:element minOccurs="0" name="ORDENESEMPLEADOPLATOS" nillable="true" type="tns:ArrayOfORDENESEMPLEADOPLATOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CARGOS" nillable="true" type="tns:CARGOS" />
+  <xs:complexType name="ArrayOfEMPLEADOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EMPLEADOS" nillable="true" type="tns:EMPLEADOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEMPLEADOS" nillable="true" type="tns:ArrayOfEMPLEADOS" />
+  <xs:complexType name="EMPLEADOS">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PERSONAS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CARGO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CARGOS" nillable="true" type="tns:CARGOS" />
+          <xs:element minOccurs="0" name="ORDENES" nillable="true" type="tns:ArrayOfORDENES" />
+          <xs:element minOccurs="0" name="ORDENESEMPLEADOPLATOS" nillable="true" type="tns:ArrayOfORDENESEMPLEADOPLATOS" />
+          <xs:element minOccurs="0" name="SEXO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SEXOS" nillable="true" type="tns:SEXOS" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EMPLEADOS" nillable="true" type="tns:EMPLEADOS" />
+  <xs:complexType name="SEXOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOSEXO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EMPLEADOS" nillable="true" type="tns:ArrayOfEMPLEADOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SEXOS" nillable="true" type="tns:SEXOS" />
+  <xs:complexType name="ArrayOfORDENESPLATOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ORDENESPLATOS" nillable="true" type="tns:ORDENESPLATOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfORDENESPLATOS" nillable="true" type="tns:ArrayOfORDENESPLATOS" />
+  <xs:complexType name="ORDENESPLATOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CANTIDAD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORDEN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORDENES" nillable="true" type="tns:ORDENES" />
+      <xs:element minOccurs="0" name="PLATO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PLATOS" nillable="true" type="tns:PLATOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ORDENESPLATOS" nillable="true" type="tns:ORDENESPLATOS" />
+  <xs:complexType name="ArrayOfPLATOSMENUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PLATOSMENUS" nillable="true" type="tns:PLATOSMENUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPLATOSMENUS" nillable="true" type="tns:ArrayOfPLATOSMENUS" />
+  <xs:complexType name="PLATOSMENUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MENU" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MENUS" nillable="true" type="tns:MENUS" />
+      <xs:element minOccurs="0" name="PLATO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PLATOS" nillable="true" type="tns:PLATOS" />
+      <xs:element minOccurs="0" name="PRECIOPLATO" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PLATOSMENUS" nillable="true" type="tns:PLATOSMENUS" />
+  <xs:complexType name="MENUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACOMPANANTES" nillable="true" type="tns:ArrayOfACOMPANANTES" />
+      <xs:element minOccurs="0" name="CODIGOMENU" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PLATOSMENUS" nillable="true" type="tns:ArrayOfPLATOSMENUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MENUS" nillable="true" type="tns:MENUS" />
+  <xs:complexType name="ArrayOfACOMPANANTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ACOMPANANTES" nillable="true" type="tns:ACOMPANANTES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfACOMPANANTES" nillable="true" type="tns:ArrayOfACOMPANANTES" />
+  <xs:complexType name="ACOMPANANTES">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OBJETOS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DISTRIBUIDORES" nillable="true" type="tns:ArrayOfDISTRIBUIDORES" />
+          <xs:element minOccurs="0" name="MENUS" nillable="true" type="tns:ArrayOfMENUS" />
+          <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ACOMPANANTES" nillable="true" type="tns:ACOMPANANTES" />
+  <xs:complexType name="ArrayOfDISTRIBUIDORES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DISTRIBUIDORES" nillable="true" type="tns:DISTRIBUIDORES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDISTRIBUIDORES" nillable="true" type="tns:ArrayOfDISTRIBUIDORES" />
+  <xs:complexType name="DISTRIBUIDORES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACOMPANANTES" nillable="true" type="tns:ArrayOfACOMPANANTES" />
+      <xs:element minOccurs="0" name="CODIGODISTRIBUIDOR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="INGREDIENTES" nillable="true" type="tns:ArrayOfINGREDIENTES" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RNC" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DISTRIBUIDORES" nillable="true" type="tns:DISTRIBUIDORES" />
+  <xs:complexType name="ArrayOfINGREDIENTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="INGREDIENTES" nillable="true" type="tns:INGREDIENTES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfINGREDIENTES" nillable="true" type="tns:ArrayOfINGREDIENTES" />
+  <xs:complexType name="INGREDIENTES">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OBJETOS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DISTRIBUIDORES" nillable="true" type="tns:ArrayOfDISTRIBUIDORES" />
+          <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PRECIO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RECETASINGREDIENTES" nillable="true" type="tns:ArrayOfRECETASINGREDIENTES" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="INGREDIENTES" nillable="true" type="tns:INGREDIENTES" />
+  <xs:complexType name="ArrayOfRECETASINGREDIENTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RECETASINGREDIENTES" nillable="true" type="tns:RECETASINGREDIENTES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRECETASINGREDIENTES" nillable="true" type="tns:ArrayOfRECETASINGREDIENTES" />
+  <xs:complexType name="RECETASINGREDIENTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CANTIDAD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="INGREDIENTE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="INGREDIENTES" nillable="true" type="tns:INGREDIENTES" />
+      <xs:element minOccurs="0" name="RECETA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RECETAS" nillable="true" type="tns:RECETAS" />
+      <xs:element minOccurs="0" name="UNIDAD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UNIDADES" nillable="true" type="tns:UNIDADES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RECETASINGREDIENTES" nillable="true" type="tns:RECETASINGREDIENTES" />
+  <xs:complexType name="RECETAS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGORECETA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLATO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PLATOS" nillable="true" type="tns:PLATOS" />
+      <xs:element minOccurs="0" name="RECETASINGREDIENTES" nillable="true" type="tns:ArrayOfRECETASINGREDIENTES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RECETAS" nillable="true" type="tns:RECETAS" />
+  <xs:complexType name="UNIDADES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOUNIDAD" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RECETASINGREDIENTES" nillable="true" type="tns:ArrayOfRECETASINGREDIENTES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UNIDADES" nillable="true" type="tns:UNIDADES" />
+  <xs:complexType name="ArrayOfMENUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MENUS" nillable="true" type="tns:MENUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMENUS" nillable="true" type="tns:ArrayOfMENUS" />
+  <xs:complexType name="ArrayOfRECETAS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RECETAS" nillable="true" type="tns:RECETAS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRECETAS" nillable="true" type="tns:ArrayOfRECETAS" />
+  <xs:complexType name="ESTADOORDENES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOESTADO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORDENES" nillable="true" type="tns:ArrayOfORDENES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ESTADOORDENES" nillable="true" type="tns:ESTADOORDENES" />
+  <xs:complexType name="ArrayOfMESAS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MESAS" nillable="true" type="tns:MESAS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMESAS" nillable="true" type="tns:ArrayOfMESAS" />
+  <xs:complexType name="MESAS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NUMEROMESAS" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORDENES" nillable="true" type="tns:ArrayOfORDENES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MESAS" nillable="true" type="tns:MESAS" />
+  <xs:complexType name="TIPOSPAGOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOTIPOPAGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FACTURAS" nillable="true" type="tns:ArrayOfFACTURAS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TIPOSPAGOS" nillable="true" type="tns:TIPOSPAGOS" />
+  <xs:complexType name="ArrayOfCLIENTES_RESTAURANTE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CLIENTES_RESTAURANTE" nillable="true" type="tns:CLIENTES_RESTAURANTE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCLIENTES_RESTAURANTE" nillable="true" type="tns:ArrayOfCLIENTES_RESTAURANTE" />
+  <xs:complexType name="ArrayOfSEXOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SEXOS" nillable="true" type="tns:SEXOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSEXOS" nillable="true" type="tns:ArrayOfSEXOS" />
+  <xs:complexType name="ArrayOfUNIDADES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UNIDADES" nillable="true" type="tns:UNIDADES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUNIDADES" nillable="true" type="tns:ArrayOfUNIDADES" />
+  <xs:complexType name="ArrayOfCARGOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CARGOS" nillable="true" type="tns:CARGOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCARGOS" nillable="true" type="tns:ArrayOfCARGOS" />
+  <xs:complexType name="ArrayOfESTADOORDENES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTADOORDENES" nillable="true" type="tns:ESTADOORDENES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTADOORDENES" nillable="true" type="tns:ArrayOfESTADOORDENES" />
+  <xs:complexType name="ArrayOfTIPOSPAGOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TIPOSPAGOS" nillable="true" type="tns:TIPOSPAGOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTIPOSPAGOS" nillable="true" type="tns:ArrayOfTIPOSPAGOS" />
+</xs:schema>

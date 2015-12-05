@@ -1,0 +1,16 @@
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PruebaModelo\bin\Debug\PruebaModelo.dll.config
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PruebaModelo\bin\Debug\PruebaModelo.dll
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PruebaModelo\bin\Debug\PruebaModelo.pdb
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PruebaModelo\bin\Debug\EntityFramework.dll
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PruebaModelo\bin\Debug\EntityFramework.xml
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PruebaModelo\obj\Debug\PruebaModelo.csprojResolveAssemblyReference.cache
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PruebaModelo\obj\Debug\PruebaModelo.dll
+C:\Users\MTLAPTOP\documents\visual studio 2015\Projects\PruebaModelo\PruebaModelo\obj\Debug\PruebaModelo.pdb
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PruebaModelo\bin\Debug\PruebaModelo.dll.config
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PruebaModelo\bin\Debug\PruebaModelo.dll
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PruebaModelo\bin\Debug\PruebaModelo.pdb
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PruebaModelo\bin\Debug\EntityFramework.dll
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PruebaModelo\bin\Debug\EntityFramework.xml
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PruebaModelo\obj\Debug\PruebaModelo.csprojResolveAssemblyReference.cache
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PruebaModelo\obj\Debug\PruebaModelo.dll
+E:\Cosas\Trabajos\PUCMM\1-Base de Datos\PruebaModelo\PruebaModelo\obj\Debug\PruebaModelo.pdb

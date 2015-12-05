@@ -1,0 +1,76 @@
+﻿<Window x:Class="WPF.Cocina"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="Restaurante Panchita Feliz - Cocina" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="ventas,cocina">Ventas</Button>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="administracion,cocina">Administración</Button>
+                <Button>Cocina</Button>
+                <Button Command="{Binding CambiarVentanaCommand}" CommandParameter="inventario,cocina">Inventario</Button>
+            </WrapPanel>
+            <TabControl TabStripPlacement="Left">
+                <TabItem Header="Platos">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">PLATOS</Label>
+                            <WrapPanel>
+                                <StackPanel>
+                                    <ListView Width="450"  ItemsSource="{Binding ListadoPlatos}" SelectedItem="{Binding PlatoActual}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding NOMBRE}"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                    <Label Content="Nuevo Platillo"/>
+                                    <TextBox Text="{Binding NuevoPlato.CODIGOOBJETO}"/>
+                                    <TextBox Text="{Binding NuevoPlato.NOMBRE}"/>
+                                    <TextBox Text="{Binding NuevoPlato.COSTOMANOFACTURA}"/>
+                                    <Button Content="+" Command="{Binding GuardarNuevoPlatoCommand}"/>
+                                </StackPanel>                                
+                                <StackPanel Margin="50 0" Background="#FFD8D8D8" Width="300">
+                                    <Label Content="{Binding PlatoActual.Nombre}"/>
+                                    <Label Content="Ingredientes"/>
+                                    <ListView ItemsSource="{Binding ListadoIngredientesPlatoActual}" SelectedItem="{Binding IngredientePlatoActual}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding NOMBRE}"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </StackPanel>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Recetas">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">RECETAS</Label>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Ingredientes">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">INGREDIENTES</Label>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Acompañantes">
+                    <Grid>
+                        <StackPanel>
+                            <Label FontSize="18">ACOMPAÑANTES</Label>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </Grid>
+</Window>
